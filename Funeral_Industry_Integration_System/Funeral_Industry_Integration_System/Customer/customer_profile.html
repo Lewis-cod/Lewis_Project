@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Profile - Funeral Industry Integration System</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/customer_profile.css" />
+  </head>
+  <body class="profile-page">
+    <div class="page-container">
+      <!-- Header -->
+      <div class="header-section">
+        <h1 class="main-title">Customer Profile</h1>
+        <button class="back-button">
+          <span class="material-symbols-outlined">arrow_back</span>
+          Back to Home Page
+        </button>
+      </div>
+
+      <!-- Profile Card -->
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <img
+              id="profileImage"
+              src="/Funeral_Industry_Integration_System/Customer/assets/customer_module_img/customer_profile_img/default_avatar.png"
+              alt="Profile Picture"
+            />
+            <div class="upload-overlay">
+              <label for="imageUpload" class="upload-button">
+                <span class="material-symbols-outlined">photo_camera</span>
+              </label>
+              <input
+                type="file"
+                id="imageUpload"
+                accept="image/*"
+                style="display: none"
+              />
+            </div>
+          </div>
+          <h2 id="customerName">Customer Name</h2>
+        </div>
+
+        <!-- Profile Form -->
+        <form id="profileForm" class="profile-form">
+          <div class="form-sections-container">
+            <!-- Left Section - Personal Information -->
+            <div class="form-section">
+              <div class="section-header">
+                <h3>Personal Information</h3>
+                <div class="header-buttons">
+                  <button type="button" id="editButton" class="edit-button">
+                    <span class="material-symbols-outlined">edit</span>
+                    Edit
+                  </button>
+                  <button
+                    type="submit"
+                    class="save-button"
+                    style="display: none"
+                  >
+                    <span class="material-symbols-outlined">save</span>
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Customer ID</label>
+                <input type="text" id="custId" name="custId" readonly />
+              </div>
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName" name="fullName" readonly />
+              </div>
+              <div class="form-group">
+                <label>IC Number</label>
+                <input type="text" id="custIC" name="custIC" readonly />
+              </div>
+              <div class="form-group">
+                <label>Gender</label>
+                <input type="text" id="custGender" name="custGender" readonly />
+              </div>
+              <div class="form-group editable">
+                <label>Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    title="Please enter a valid email address (e.g., example@domain.com)"
+                    required 
+                    disabled 
+                />
+                <div class="input-hint">
+                    Format: <span>example@domain.com</span>
+                </div>
+              </div>
+              <div class="form-group editable">
+                <label>Phone Number</label>
+                <input 
+                    type="tel" 
+                    id="phoneNo" 
+                    name="phoneNo" 
+                    pattern="[0-9]{10,11}"
+                    title="Phone number must be 10-11 digits"
+                    minlength="10"
+                    maxlength="11"
+                    required 
+                    disabled 
+                />
+                <div class="input-hint">
+                    Format: <span>0123456789</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <input type="text" id="custStatus" name="custStatus" readonly />
+              </div>
+            </div>
+
+            <!-- Right Section - Security Settings -->
+            <div class="form-section">
+              <div class="section-header">
+                <h3>Security Settings</h3>
+              </div>
+              <!-- Change Password Button -->
+              <button
+                type="button"
+                id="changePasswordBtn"
+                class="change-password-button"
+              >
+                <span class="material-symbols-outlined">lock_reset</span>
+                Change Password
+              </button>
+
+              <!-- Password Fields (hidden by default) -->
+              <div class="password-fields" style="display: none">
+                <div class="form-group">
+                  <label>Current Password</label>
+                  <input type="password" id="currentPassword" />
+                </div>
+                <div class="form-group">
+                  <label>New Password</label>
+                  <input 
+                    type="password" 
+                    id="newPassword" 
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                    title="Password must contain at least 8 characters, including uppercase, lowercase, number and special character"
+                  />
+                  <div class="password-hint">
+                    Recommended Format: <span>Test@1234</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Confirm New Password</label>
+                  <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                  />
+                </div>
+                <div class="password-buttons">
+                  <button type="button" class="cancel-password-button">Cancel</button>
+                  <button type="button" class="save-password-button">Update Password</button>
+                </div>
+              </div>
+
+              <!-- Account Deactivation -->
+              <div class="deactivation-section">
+                <h3>Account Deactivation</h3>
+                <p class="warning-text">
+                  Warning: This action cannot be undone.
+                </p>
+                <button type="button" class="deactivate-button">
+                  Deactivate Account
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Deactivation Modal -->
+    <div id="deactivateModal" class="modal">
+      <div class="modal-content">
+        <h3>Account Deactivation</h3>
+        <p>Please enter your password to confirm account deactivation.</p>
+        <div class="form-group">
+          <input
+            type="password"
+            id="deactivatePassword"
+            placeholder="Enter your password"
+          />
+        </div>
+        <div class="modal-buttons">
+          <button class="cancel-button" onclick="closeDeactivateModal()">
+            Cancel
+          </button>
+          <button class="confirm-button" id="confirmDeactivate">
+            Deactivate Account
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/customer_profile.js"></script>
+
+    <!-- Add this right before the closing body tag -->
+    <div id="overlay-message" class="overlay-message">
+      <div class="overlay-content">
+        <div class="overlay-icon">
+          <span class="material-symbols-outlined"></span>
+        </div>
+        <div class="overlay-text"></div>
+        <button class="overlay-close">OK</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Provider Registration</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Login_Register/assets/css/loginMainStyle.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Login_Register/assets/css/serviceProviderSignup.css">
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("3xcFGH6Gr05Hhdtwy");
+            console.log('EmailJS initialized');
+        })();
+    </script>
+</head>
+
+<!-- Body -->
+<body id="home" class="service-provider-signup">
+    <!-- Page Container -->
+    <div class="page-container">
+        <!-- Signup Content -->
+        <div class="signup-content">
+            <!-- Signup Left -->
+            <div class="signup-left">
+                <h1>Sign-up Form</h1>
+                <p>Join our network of service providers and expand your business reach.</p>
+            </div>
+            <!-- End Signup Left -->
+
+            <!-- Signup Right -->
+            <div class="signup-right">
+                <!-- Signup Form -->
+                <form id="signupForm">
+                    <!-- Company Information -->
+                    <div class="form-group">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" id="companyName" name="provider_companyName" required 
+                            placeholder="Enter your company name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessAddress">Company Address</label>
+                        <textarea id="businessAddress" name="business_Address" required 
+                            placeholder="Enter your company address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessState">State</label>
+                        <select id="businessState" name="business_state" required>
+                            <option value="">Select a state</option>
+                            <option value="Johor">Johor</option>
+                            <option value="Kedah">Kedah</option>
+                            <option value="Kelantan">Kelantan</option>
+                            <option value="Melaka">Melaka</option>
+                            <option value="Negeri Sembilan">Negeri Sembilan</option>
+                            <option value="Pahang">Pahang</option>
+                            <option value="Perak">Perak</option>
+                            <option value="Perlis">Perlis</option>
+                            <option value="Pulau Pinang">Pulau Pinang</option>
+                            <option value="Sabah">Sabah</option>
+                            <option value="Sarawak">Sarawak</option>
+                            <option value="Selangor">Selangor</option>
+                            <option value="Terengganu">Terengganu</option>
+                            <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessLicense">Business License Number</label>
+                        <input type="text" id="businessLicense" name="business_License" required 
+                            placeholder="Enter your business license number">
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="form-group">
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" id="contact" name="provider_Contact" required 
+                            placeholder="Enter your contact number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="provider_email" required 
+                            placeholder="Enter your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">Service Type</label>
+                        <select id="serviceType" name="service_Type" required>
+                            <option value="">Select a service type</option>
+                            <option value="Funeral Home">Funeral Home</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-input-container">
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                            <span class="material-symbols-outlined toggle-password" style="cursor: pointer;">visibility_off</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Re-type Password</label>
+                        <div class="password-input-container">
+                            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                            <span class="material-symbols-outlined toggle-password" style="cursor: pointer;">visibility_off</span>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-button">Sign Up</button>
+                        <button type="button" class="back-button" onclick="window.location.href='/Funeral_Industry_Integration_System/Login_Register/serviceProvider-loginPage.html'">
+                            Back to Login
+                        </button>
+                    </div>
+                </form>
+                <!-- End Signup Form -->
+            </div>
+            <!-- End Signup Right -->
+        </div>
+        <!-- End Signup Content -->
+    </div>
+    <!-- End Page Container -->
+
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/config/firebase_serviceProvider.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Login_Register/assets/javascript/serviceProviderSignup.js"></script>
+    <script src="/Funeral_Industry_Integration_System/Login_Register/assets/javascript/loginHandler.js"></script>
+</body>
+</html> 

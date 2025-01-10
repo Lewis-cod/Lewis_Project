@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funeral Packages</title>
+
+    <!-- CSS Files -->
+    <link
+      rel="stylesheet"
+      href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Funeral_Industry_Integration_System/Customer/assets/css/funeral_package.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script
+      type="module"
+      src="/Funeral_Industry_Integration_System/Customer/assets/javascript/funeral_package.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="loader-content">
+        <div class="spinner"></div>
+        <p>Loading packages...</p>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-container">
+        <div class="filter-group">
+          <label for="religion">Religion</label>
+          <select id="religion" class="filter-select">
+            <option value="">All Religions</option>
+            <option value="Buddhism">Buddhism</option>
+            <option value="Taoism">Taoism</option>
+            <option value="Christian">Christian</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="price">Price Range</label>
+          <select id="price" class="filter-select">
+            <option value="">All Prices</option>
+            <option value="0-5000">Below RM 5,000</option>
+            <option value="5000-10000">RM 5,000 - RM 10,000</option>
+            <option value="10000-20000">RM 10,000 - RM 20,000</option>
+            <option value="20000+">Above RM 20,000</option>
+          </select>
+        </div>
+
+        <div class="filter-buttons">
+          <button class="filter-apply-btn">Apply Filters</button>
+          <button class="filter-reset-btn">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="package-listing">
+      <div class="listing-grid">
+        <!-- Package cards will be dynamically added here -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button id="prevPage" class="page-btn">&lt; Previous</button>
+        <div id="pageNumbers" class="page-numbers"></div>
+        <button id="nextPage" class="page-btn">Next &gt;</button>
+      </div>
+    </div>
+
+    <!-- Cart Confirmation Overlay -->
+    <div id="cartOverlay" class="overlay">
+        <div class="overlay-content">
+            <h3>Add to Cart</h3>
+            <p>Are you sure you want to add this package to your cart?</p>
+            <div class="overlay-buttons">
+                <button class="cancel-btn" onclick="closeCartOverlay()">Cancel</button>
+                <button class="confirm-btn" onclick="confirmAddToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Overlay -->
+    <div id="successOverlay" class="overlay">
+        <div class="overlay-content success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Success!</h3>
+            <p>Package has been added to your cart</p>
+            <div class="overlay-buttons">
+                <button class="continue-btn" onclick="closeSuccessOverlay()">Continue Shopping</button>
+                <button class="view-cart-btn" onclick="window.location.href='/Funeral_Industry_Integration_System/Customer/cart.html'">View Cart</button>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

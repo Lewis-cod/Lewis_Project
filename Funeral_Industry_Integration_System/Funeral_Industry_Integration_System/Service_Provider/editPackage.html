@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Edit Package</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Service_Provider/assets/css/serviceManagement.css">
+</head>
+
+<body>
+    <!-- Container -->
+    <div class="container">
+        <!-- Package Form Container -->
+        <div class="package-form-container">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h3 class="mb-0">Edit Package</h3>
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceManagementPage.html" class="btn btn-outline-secondary">
+                    <span class="material-symbols-outlined align-middle me-2">arrow_back</span>
+                    Back to Service Management
+                </a>
+            </div>
+            <!-- Package Form -->
+            <form id="packageForm">
+                <div class="package-form-group">
+                    <label for="packageName">Package Name</label>
+                    <input type="text" class="form-control" id="packageName" required>
+                </div>
+
+                <div class="package-form-group">
+                    <label for="religion">Religion</label>
+                    <select class="form-control" id="religion" required>
+                        <option value="">Select Religion</option>
+                        <option value="Buddhism">Buddhism</option>
+                        <option value="Taoism">Taoism</option>
+                        <option value="Christian">Christian</option>
+                    </select>
+                </div>
+
+                <div class="package-form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" rows="4" required></textarea>
+                </div>
+
+                <div class="package-form-group">
+                    <label for="price">Price (RM)</label>
+                    <input type="number" class="form-control" id="price" required>
+                </div>
+
+                <div class="package-form-group">
+                    <h3>Package Image</h3>
+                    <div class="company-images-section">
+                        <label for="packageImage" class="add-company-image-btn">
+                            <span class="material-symbols-outlined">add_photo_alternate</span>
+                            Add Package Image
+                        </label>
+                        <input type="file" id="packageImage" accept="image/*" multiple style="display: none">
+                        <div id="packageImageGrid" class="image-grid"></div>
+                        <div class="image-count">
+                            <span id="selectedFileCount">0</span>/6 images uploaded
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Action Buttons -->
+                <div class="package-action-buttons">
+                    <button type="button" class="btn btn-danger" id="removePackageBtn">
+                        <span class="material-symbols-outlined align-middle me-2">delete</span>
+                        Remove Package
+                    </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="window.history.back()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Edit</button>
+                    </div>
+                </div>
+            </form>
+            <!-- End of Package Form -->
+        </div>
+    </div>
+    <!-- End of Container -->
+    
+    <!-- Confirmation Overlay -->
+    <div id="confirmationOverlay" class="package-overlay" style="display: none;">
+        <div class="overlay-content">
+            <div class="overlay-icon">
+                <span class="material-symbols-outlined">help</span>
+            </div>
+            <h4>Confirm Changes</h4>
+            <p>Are you sure you want to save these changes?</p>
+            <div class="overlay-buttons">
+                <button id="cancelEdit" class="btn btn-light">
+                    <span class="material-symbols-outlined">close</span>
+                    Cancel
+                </button>
+                <button id="confirmEdit" class="btn btn-primary">
+                    <span class="material-symbols-outlined">save</span>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- End of Confirmation Overlay -->
+
+    <!-- Delete Confirmation Overlay -->
+    <div id="deleteConfirmationOverlay" class="package-overlay" style="display: none;">
+        <div class="overlay-content">
+            <div class="overlay-icon">
+                <span class="material-symbols-outlined" style="color: #dc3545;">delete_forever</span>
+            </div>
+            <h4>Delete Package</h4>
+            <p>Are you sure you want to delete this package? This action cannot be undone.</p>
+            <div class="overlay-buttons">
+                <button id="cancelDelete" class="btn btn-light">
+                    <span class="material-symbols-outlined">close</span>
+                    Cancel
+                </button>
+                <button id="confirmDelete" class="btn btn-danger">
+                    <span class="material-symbols-outlined">delete</span>
+                    Delete Package
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- End of Delete Confirmation Overlay -->
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="package-overlay" style="display: none;">
+        <div class="overlay-content loading-wrapper">
+            <div class="package-loading-content">
+                <div class="loading-icon">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <h4 id="loadingTitle">Updating Package</h4>
+                <p id="loadingMessage">Please wait while we process your request...</p>
+                <div class="loading-progress">
+                    <div class="loading-progress-bar"></div>
+                </div>
+                <div class="loading-status">
+                    <span class="material-symbols-outlined">sync</span>
+                    <span id="statusMessage">Processing changes...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Loading Overlay -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/editPackage.js"></script>
+</body>
+
+</html> 

@@ -1,0 +1,108 @@
+/* Hide non-receipt elements when printing */
+@media print {
+    header-component,
+    .empty-state,
+    .order-actions,
+    button {
+        display: none !important;
+    }
+
+    /* Reset styles for printing */
+    body {
+        margin: 0;
+        padding: 15px;
+        background: white;
+    }
+
+    .order-card {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        page-break-inside: avoid;
+    }
+
+    /* Receipt header */
+    .receipt-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .receipt-header img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    /* Company info */
+    .company-info {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 14px;
+    }
+
+    /* Order details */
+    .order-info {
+        margin-bottom: 20px;
+    }
+
+    .order-id {
+        font-size: 16px;
+        color: black;
+    }
+
+    .order-details {
+        display: block;
+        background: none;
+        padding: 0;
+        border: none;
+        margin: 10px 0;
+    }
+
+    .order-details p {
+        margin: 5px 0;
+        color: black;
+    }
+
+    /* Package details */
+    .package-details {
+        margin: 20px 0;
+    }
+
+    .package-item {
+        border: none;
+        border-bottom: 1px dashed #ccc;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        background: none;
+    }
+
+    .package-item p {
+        margin: 3px 0;
+        color: black;
+    }
+
+    /* Total amount */
+    .order-total {
+        margin-top: 20px;
+        padding: 10px 0;
+        border-top: 2px solid black;
+        text-align: right;
+        font-weight: bold;
+        background: none;
+        color: black;
+    }
+
+    /* Footer */
+    .receipt-footer {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+    }
+
+    /* Add page break between receipts */
+    .order-card {
+        page-break-after: always;
+    }
+} 

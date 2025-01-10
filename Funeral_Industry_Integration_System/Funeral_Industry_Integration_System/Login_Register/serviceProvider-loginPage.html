@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funeral Industry Integration System</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Login_Register/assets/css/loginMainStyle.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Login_Register/assets/css/serviceProviderLogin.css">
+
+    <!-- Database -->
+    <script type="module" src="/Funeral_Industry_Integration_System/config/firebaseauth.js"></script>
+</head>
+
+<body id="home" class="service-provider-login">
+    <!-- Page Container -->
+    <div class="page-container">
+
+        <!-- Header -->
+        <div class="header-section">
+            <h1 class="main-title">Funeral Industry Integration System</h1>
+        </div>
+        <!-- End Header -->
+
+        <!-- Login Card -->
+        <div class="login-card">
+            <div class="login-form">
+                <div class="login-logo">
+                    <img src="/Funeral_Industry_Integration_System/Login_Register/assets/img/logo.png" alt="Logo">
+                </div>
+                <h2 class="login-title">Service Provider Login</h2>
+
+                <!-- Fields -->
+                <div class="fields">
+                    <div class="username">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <input type="text" class="user-input" placeholder="User ID" required/>
+                    </div>
+                    <div class="password">
+                        <span class="material-symbols-outlined">lock</span>
+                        <input type="password" class="pass-input" placeholder="Password" required/>
+                        <span class="material-symbols-outlined toggle-password" style="cursor: pointer;">visibility_off</span>
+                    </div>
+                    <button class="service-provider-signin-button">Login</button>
+                </div>
+                <!-- End Fields -->
+
+                <!-- Register Link -->
+                <div class="link">
+                    <span>New Service Provider? </span>
+                    <a href="/Funeral_Industry_Integration_System/Login_Register/serviceProvider-signupPage.html">Register Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- End Login Card -->
+
+        <script type="module" src="/Funeral_Industry_Integration_System/config/firebase_serviceProvider.js"></script>
+        <script src="/Funeral_Industry_Integration_System/Login_Register/assets/javascript/loginHandler.js"></script>
+    </body>
+</html>

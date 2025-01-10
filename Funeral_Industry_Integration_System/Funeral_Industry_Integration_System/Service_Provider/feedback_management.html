@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Management - Service Provider Dashboard</title>
+    
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Service_Provider/assets/css/serviceProviderDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Service_Provider/assets/css/feedback_management.css">
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+            </div>
+            
+            <div class="header-right">
+                
+                <div class="header-icon profile-dropdown">
+                    <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                    <div class="dropdown-content" id="profileDropdownContent">
+                        <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderProfile.html">
+                            <span class="material-symbols-outlined">person</span>
+                            View Profile
+                        </a>
+                        <a href="#" id="logoutBtn">
+                            <span class="material-symbols-outlined">logout</span>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="brand-text">Service Provider</span>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="sidebar-main-item">
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderDashboardPage.html">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="sidebar-list-text">Dashboard</span>
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+         
+            <!-- Other menu items -->
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderDashboardPage.html">
+                        <span class="material-symbols-outlined">assignment</span>
+                        <span class="sidebar-list-text">Plan Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item" id="serviceManagementItem">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceManagementPage.html" id="serviceManagementLink">
+                        <span class="material-symbols-outlined">build</span>
+                        <span class="sidebar-list-text">Service Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/customerAppointments.html">
+                        <span class="material-symbols-outlined">event_available</span>
+                        <span class="sidebar-list-text">Customer Appointments</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/feedback_management.html">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="sidebar-list-text">Feedback & Ratings</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/partnerShipStatus.html">
+                        <span class="material-symbols-outlined">handshake</span>
+                        <span class="sidebar-list-text">Partnership</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-title">
+                <h1>Feedback Management</h1>
+            </div>
+            <div class="content-wrapper">
+                <div class="feedback-container">
+                    <!-- Left Side Stats -->
+                    <div class="stats-section">
+                        <!-- Average Rating -->
+                        <div class="stat-card">
+                            <h3>Average Rating</h3>
+                            <div id="averageRating">0.0</div>
+                            <div id="totalReviews">0 total reviews</div>
+                        </div>
+
+                        <!-- Rating Distribution -->
+                        <div class="rating-distribution">
+                            <h3>Rating Distribution</h3>
+                            <div class="rating-bars">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="feedback-section">
+                        <!-- Add Filter Section -->
+                        <div class="feedback-filter">
+                            <h3>Filter Reviews</h3>
+                            <div class="star-filters">
+                                <button class="filter-btn active" data-rating="all">
+                                    All
+                                </button>
+                                <button class="filter-btn" data-rating="5">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button class="filter-btn" data-rating="4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button class="filter-btn" data-rating="3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button class="filter-btn" data-rating="2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button class="filter-btn" data-rating="1">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Feedback List -->
+                        <div class="feedback-list">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/serviceProviderDashboard.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/feedback_management.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/partnershipButton.js"></script>
+</body>
+</html> 

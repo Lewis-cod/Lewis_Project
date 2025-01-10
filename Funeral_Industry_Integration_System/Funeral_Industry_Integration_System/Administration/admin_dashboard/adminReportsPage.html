@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Reports</title>
+
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/adminDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/reportHandle.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+            </div>
+            
+            <div class="header-right">
+                
+                
+                <!-- Profile Dropdown -->
+                <div class="header-icon profile-dropdown">
+                    <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                    <div class="dropdown-content" id="profileDropdownContent">
+                        <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminProfilePage.html">
+                            <span class="material-symbols-outlined">person</span>
+                            View Profile
+                        </a>
+                        <a href="#" id="logoutBtn">
+                            <span class="material-symbols-outlined">logout</span>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+                <!-- End Profile Dropdown -->
+
+            </div>
+        </header>
+         
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="brand-text">Admin Inventory</span>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="sidebar-main-item">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="sidebar-list-text">Dashboard</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+
+            <!-- Other menu items -->
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminStaffManagementPage.html">
+                        <span class="material-symbols-outlined">badge</span>
+                        <span class="sidebar-list-text">Staff Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminServiceProviderManagementPage.html">
+                        <span class="material-symbols-outlined">partner_exchange</span>
+                        <span class="sidebar-list-text">Service Provider Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminReportsPage.html">
+                        <span class="material-symbols-outlined">report</span>
+                        <span class="sidebar-list-text">Reports</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminCustomerManagementPage.html">
+                        <span class="material-symbols-outlined">patient_list</span>
+                        <span class="sidebar-list-text">Customer Management</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="report-header">
+                    <h2>Feedback Analysis Report</h2>
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label>Date Range:</label>
+                            <div class="date-range">
+                                <input type="date" id="startDate" class="date-input">
+                                <span>to</span>
+                                <input type="date" id="endDate" class="date-input">
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Rating Analysis:</label>
+                            <select id="ratingAnalysis">
+                                <option value="all">Overall Distribution</option>
+                                <option value="high">High Ratings (4-5★)</option>
+                                <option value="low">Low Ratings (1-2★)</option>
+                            </select>
+                        </div>
+                        <button id="generateReport" class="btn-primary">
+                            Generate Report
+                        </button>
+                        <button id="printReport" class="btn-primary">
+                            Print Report
+                        </button>
+                    </div>
+                </div>
+
+                <div class="report-content">
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Overall Rating Distribution</h3>
+                            <canvas id="ratingChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Service Provider Rating Analysis</h3>
+                            <canvas id="providerChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="feedback-stats">
+                        <div class="stat-card">
+                            <h4>Average Rating</h4>
+                            <div id="avgRating"></div>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Total Feedback</h4>
+                            <div id="totalFeedback"></div>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Top Rated Provider</h4>
+                            <div id="topProvider"></div>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Needs Improvement</h4>
+                            <div id="lowProvider"></div>
+                        </div>
+                    </div>
+
+                    <div class="provider-analysis">
+                        <h3>Service Provider Performance Analysis</h3>
+                        <table id="providerAnalysisTable">
+                            <thead>
+                                <tr>
+                                    <th>Provider Name</th>
+                                    <th>Average Rating</th>
+                                    <th>Total Feedback</th>
+                                    <th>Rating Distribution</th>
+                                    <th>Performance Status</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/Funeral_Industry_Integration_System/Administration/assets/javascript/adminDashboardscripts.js" defer></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Administration/assets/javascript/reportHandle.js"></script>
+</body>
+
+</html>

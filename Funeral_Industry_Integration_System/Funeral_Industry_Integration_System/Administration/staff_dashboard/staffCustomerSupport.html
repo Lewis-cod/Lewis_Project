@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff - Customer Support</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/adminDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/staffCustomerSupport.css">
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+            </div>
+            
+            <div class="header-right">
+                
+                <!-- Profile Dropdown -->
+                <div class="header-icon profile-dropdown">
+                    <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                    <div class="dropdown-content" id="profileDropdownContent">
+                        <a href="/Funeral_Industry_Integration_System/Administration/staff_dashboard/staffProfile.html">
+                            <span class="material-symbols-outlined">person</span>
+                            View Profile
+                        </a>
+                        <a href="#" id="logoutBtn">
+                            <span class="material-symbols-outlined">logout</span>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+                <!-- End Profile Dropdown -->
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="brand-text">Staff Inventory</span>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="sidebar-main-item">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="sidebar-list-text">Dashboard</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+
+            <!-- Other menu items -->
+            <ul class="sidebar-list">
+               
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/staff_dashboard/staffServiceProviderManagementPage.html">
+                        <span class="material-symbols-outlined">partner_exchange</span>
+                        <span class="sidebar-list-text">Service Provider Management</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/staff_dashboard/staffCustomerSupport.html">
+                        <span class="material-symbols-outlined">support_agent</span>
+                        <span class="sidebar-list-text">Customer Support</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>Customer Support - FAQ Management</h1>
+                </div>
+                
+                <!-- Statistics Card -->
+                <div class="insights">
+                    <div class="total-questions">
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Total Questions</h3>
+                                <h1>0</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Statistics Card -->
+
+                <!-- Add New FAQ Form -->
+                <div class="content-grid">
+                    <div class="card add-qa-form">
+                        <h2>Add New FAQ</h2>
+                        <form id="addQAForm">
+                            <div class="form-group">
+                                <label for="query">Question:</label>
+                                <textarea id="query" name="query" required placeholder="Enter your question here..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="response">Answer:</label>
+                                <textarea 
+                                    id="response" 
+                                    name="response" 
+                                    required 
+                                    placeholder="Enter your answer here..."
+                                    rows="6"
+                                    wrap="soft"
+                                ></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="submit-btn">
+                                    <span class="material-symbols-outlined">add</span>
+                                    Add FAQ
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- End Add New FAQ Form -->
+
+                    <!-- FAQ List -->
+                    <div class="card qa-list">
+                        <h2>FAQ List</h2>
+                        <div id="qaList"></div>
+                    </div>
+                    <!-- End FAQ List -->
+                </div>
+                <!-- End Content Grid -->
+            </div>
+            <!-- End Content Wrapper -->
+        </main>
+        <!-- End Main Content -->
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/Funeral_Industry_Integration_System/Administration/assets/javascript/adminDashboardscripts.js"></script>
+    <script src="/Funeral_Industry_Integration_System/config/firebase_user.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Administration/assets/javascript/customerSupport.js"></script>
+</body>
+</html> 

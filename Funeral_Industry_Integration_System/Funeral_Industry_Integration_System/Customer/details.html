@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Provider Details</title>
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/details.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header-component></header-component>
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="loader-content">
+        <div class="spinner"></div>
+        <p>Loading details...</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="image-container">
+        <!-- Images will be inserted by JavaScript -->
+      </div>
+
+      <div class="details-section">
+        <h1 id="companyName"></h1>
+        <div id="companyDetails"></div>
+      </div>
+
+      <!-- Packages Section -->
+      <div class="packages-section">
+        <h2>Available Packages</h2>
+        <div class="package-filters">
+          <button type="button" class="filter-btn active" data-religion="all">All</button>
+          <button type="button" class="filter-btn" data-religion="Buddhism">Buddhism</button>
+          <button type="button" class="filter-btn" data-religion="Taoism">Taoism</button>
+          <button type="button" class="filter-btn" data-religion="Christian">Christian</button>
+        </div>
+        <div class="packages-grid" id="packagesGrid">
+          <!-- Packages will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/details.js"></script>
+  </body>
+</html>

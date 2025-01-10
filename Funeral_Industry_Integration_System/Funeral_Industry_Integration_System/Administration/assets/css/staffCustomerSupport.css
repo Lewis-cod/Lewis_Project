@@ -1,0 +1,330 @@
+/* Main Container */
+.main-content {
+    grid-area: main;
+    background: var(--color-background);
+}
+
+.content-wrapper {
+    padding: 32px;
+    max-width: 1400px;
+    margin: 0;
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+/* Statistics Cards */
+.insights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.insights > div {
+    background: var(--color-white);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.insights > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.insights > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.insights .middle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.insights .material-symbols-outlined {
+    font-size: 40px;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--color-light);
+}
+
+.insights .left {
+    flex: 1;
+}
+
+.insights h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-dark-variant);
+    margin-bottom: 8px;
+}
+
+.insights h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+/* Card Styles */
+.card {
+    background: var(--color-white);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card h2 {
+    font-size: 20px;
+    color: var(--color-dark);
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-dark);
+    margin-bottom: 8px;
+}
+
+.form-group textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+    transition: all 0.3s ease;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+    outline: none;
+}
+
+.form-group textarea::placeholder {
+    color: #9e9e9e;
+}
+
+/* Submit Button */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgb(255, 186, 57);
+    color: rgb(3, 5, 1);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: coral;
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    padding: 12px 24px;
+    background: rgb(255, 186, 57);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background: coral;
+    transform: translateY(-2px);
+}
+
+/* Card Colors */
+.total-questions::before {
+    background: linear-gradient(to right, #4CAF50, #45a049);
+}
+
+.total-questions .material-symbols-outlined {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.active-questions::before {
+    background: linear-gradient(to right, #2196F3, #1e88e5);
+}
+
+.active-questions .material-symbols-outlined {
+    color: #2196F3;
+    background: rgba(33, 150, 243, 0.1);
+}
+
+/* FAQ Item Styles */
+.faq-item {
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--color-primary);
+}
+
+.faq-item.inactive {
+    border-left-color: var(--color-dark-variant);
+    opacity: 0.8;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.faq-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+}
+
+.faq-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-dark-variant);
+    margin-bottom: 16px;
+}
+
+.faq-meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    color: var(--color-dark-variant);
+}
+
+.faq-meta small {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.faq-meta small:last-child {
+    margin-left: auto;
+}
+
+.faq-actions {
+    display: flex;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.faq-actions button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-btn {
+    background: var(--color-light);
+    color: var(--color-primary);
+}
+
+.toggle-btn {
+    background: var(--color-light);
+    color: var(--color-success);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .content-wrapper {
+        padding: 24px;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        padding: 16px;
+    }
+    
+    .insights {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .card {
+        padding: 24px;
+    }
+    
+    .insights > div {
+        padding: 24px;
+    }
+    
+    .form-group textarea {
+        min-height: 120px;
+    }
+
+    .edit-btn, .toggle-btn {
+        margin-left: -16px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}

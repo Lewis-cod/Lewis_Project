@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Service Provider Details</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/adminDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/adminServiceProvider.css">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Page Container -->
+    <div class="provider-details-container">
+
+        <!-- Details Header -->
+        <div class="details-header">
+            <button onclick="history.back()" class="back-button">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Back
+            </button>
+            <h1>Service Provider Details</h1>
+        </div>
+        <!-- End Details Header -->
+
+        <!-- Provider Info Section -->
+        <div class="provider-info-section">
+            <!-- Company Information -->
+            <div class="info-card">
+                <h2>
+                    <span class="material-symbols-outlined">business</span>
+                    Company Information
+                </h2>
+                <div class="company-info">
+                    <div class="info-item">
+                        <label>Company Name</label>
+                        <span id="companyName"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Business License</label>
+                        <span id="businessLicense"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Service Type</label>
+                        <span id="serviceType"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>State</label>
+                        <span id="businessState"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Registration Date</label>
+                        <span id="registrationDate"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="info-card">
+                <h2>
+                    <span class="material-symbols-outlined">contact_page</span>
+                    Contact Information
+                </h2>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="material-symbols-outlined">email</span>
+                        <div class="contact-details">
+                            <label>Email</label>
+                            <span id="email"></span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-symbols-outlined">phone</span>
+                        <div class="contact-details">
+                            <label>Phone</label>
+                            <span id="phone"></span>
+                        </div>
+                    </div>
+                    <div class="info-item address">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <div class="contact-details">
+                            <label>Address</label>
+                            <span id="address"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="info-card">
+                <h2>
+                    <span class="material-symbols-outlined">payments</span>
+                    Payment Information
+                </h2>
+                <div class="payment-info">
+                    <div class="info-item">
+                        <label>Payment Status</label>
+                        <span id="paymentStatus"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Payment Date & Time</label>
+                        <span id="paymentDate"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Payment Amount</label>
+                        <span id="paymentAmount"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Payment Method</label>
+                        <span id="paymentMethod"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Payment ID</label>
+                        <span id="paymentId"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Card Number</label>
+                        <span id="cardLastFour"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documents Section -->
+        <div class="info-card">
+            <h2>Documents</h2>
+            <div id="documents">
+                <!-- Documents (go javaScript) -->
+            </div>
+        </div>
+        <!-- End Documents Section -->
+
+        <!-- Approval Section -->
+        <div class="approval-section">
+            <h2>Application Status</h2>
+            <div class="status-controls">
+                <button id="approveBtn" class="approve-btn">Approve</button>
+                <button id="rejectBtn" class="reject-btn">Reject</button>
+            </div>
+            <div class="rejection-reason" style="display: none;">
+                <textarea id="rejectionReason" placeholder="Please provide rejection reason..."></textarea>
+                <div class="rejection-buttons">
+                    <button id="submitRejection" class="submit-btn">Submit Rejection</button>
+                </div>
+            </div>
+        </div>
+        <!-- Account Status Section -->
+        <div class="account-status-section">
+            <h2>
+                <span class="material-symbols-outlined">admin_panel_settings</span>
+                Account Status Control
+            </h2>
+            <div class="status-info">
+                <div class="current-status">
+                    <label>Current Status:</label>
+                    <span id="accountStatus" class="status-badge"></span>
+                </div>
+                <div class="status-controls">
+                    <button id="toggleAccountStatus" class="status-toggle-btn">
+                        Toggle Status
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- End Approval Section -->
+    </div>
+    <!-- End Page Container -->
+     
+    <!-- JavaScript -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Administration/assets/javascript/providerDetails.js"></script>
+</body>
+
+</html> 

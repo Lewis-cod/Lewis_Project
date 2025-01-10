@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title-->
+    <title>Service Provider Management</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/adminDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/adminServiceProvider.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+            </div>
+            
+            <div class="header-right">
+                
+                
+                <!-- Profile Dropdown -->
+                <div class="header-icon profile-dropdown">
+                    <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                    <div class="dropdown-content" id="profileDropdownContent">
+                        <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminProfilePage.html">
+                            <span class="material-symbols-outlined">person</span>
+                            View Profile
+                        </a>
+                        <a href="#" id="logoutBtn">
+                            <span class="material-symbols-outlined">logout</span>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+                <!-- End Profile Dropdown -->
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="brand-text">Admin Inventory</span>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="sidebar-main-item">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="sidebar-list-text">Dashboard</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+
+            <!-- Other menu items -->
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminStaffManagementPage.html">
+                        <span class="material-symbols-outlined">badge</span>
+                        <span class="sidebar-list-text">Staff Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item active">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminServiceProviderManagementPage.html">
+                        <span class="material-symbols-outlined">partner_exchange</span>
+                        <span class="sidebar-list-text">Service Provider Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminReportsPage.html">
+                        <span class="material-symbols-outlined">report</span>
+                        <span class="sidebar-list-text">Reports</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminCustomerManagementPage.html">
+                        <span class="material-symbols-outlined">patient_list</span>
+                        <span class="sidebar-list-text">Customer Management</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="main-title">
+                    <h1 class="font-title">Service Provider Management</h1>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <p>Total Providers</p>
+                            <span class="material-symbols-outlined text-blue">groups</span>
+                        </div>
+                        <span class="font-weight-bold" id="totalProviders">0</span>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-inner">
+                            <p>Active Providers</p>
+                            <span class="material-symbols-outlined text-green">check_circle</span>
+                        </div>
+                        <span class="font-weight-bold" id="activeProviders">0</span>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-inner">
+                            <p>Pending Review</p>
+                            <span class="material-symbols-outlined text-orange">pending</span>
+                        </div>
+                        <span class="font-weight-bold" id="pendingProviders">0</span>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-inner">
+                            <p>Rejected</p>
+                            <span class="material-symbols-outlined text-red">cancel</span>
+                        </div>
+                        <span class="font-weight-bold" id="rejectedProviders">0</span>
+                    </div>
+                </div>
+
+                <!-- Provider Table -->
+                <div class="provider-table-container">
+                    <table class="provider-table">
+                        <thead>
+                            <tr>
+                                <th>Provider ID</th>
+                                <th>Company Name</th>
+                                <th>Partner Status</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Registration Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="providerTableBody">
+                            <!-- Data will be dynamically populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/Funeral_Industry_Integration_System/Administration/assets/javascript/adminDashboardscripts.js"></script>
+    <script type="module">
+        import { showProviderList } from '/Funeral_Industry_Integration_System/Administration/assets/javascript/providerDetails.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            showProviderList();
+        });
+    </script>
+</body>
+
+</html>

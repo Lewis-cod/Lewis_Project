@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - Funeral Integration Platform</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/order_history.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/receipt-print.css" media="print">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/order_history.js"></script>
+</head>
+<body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <div class="order-history-container">
+        <h1>Order History</h1>
+        
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="loader"></div>
+        </div>
+
+        <div class="orders-list">
+            <!-- Orders will be loaded here -->
+        </div>
+
+        <!-- Empty state -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-shopping-bag"></i>
+            <h2>No Orders Yet</h2>
+            <p>You haven't placed any orders yet.</p>
+            <a href="/Funeral_Industry_Integration_System/Customer/funeral_package.html" class="browse-btn">
+                Browse Packages
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

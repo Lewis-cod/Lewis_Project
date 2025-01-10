@@ -1,0 +1,469 @@
+/* customer login card style */
+.customer-login .login-card {
+    background: white;
+    max-width: 450px;
+    padding: 0;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+/* Logo style */
+.login-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.login-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fields style */
+.fields {
+    width: 100%;
+    padding: 75px 5px 5px 5px;
+}
+
+.fields input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    padding: 20px 10px;
+    width: 100%;
+}
+
+.username, .password {
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1,
+                inset -8px -8px 8px #ffffff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.fields .material-symbols-outlined {
+    color: #666;
+    font-size: 20px;
+}
+
+.cust-signin-button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    background: #24cfaa;
+    box-shadow: 3px 3px 8px #b1b1b1,
+                -3px -3px 8px #ffffff;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.cust-signin-button:hover {
+    background: #2fdbb6;
+}
+
+.cust-signin-button:active {
+    background: #1da88a;
+}
+
+.link {
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.link a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.link a:hover {
+    color: #24cfaa;
+}
+
+/* Initialize Customer Button Styles  */
+.cust-init-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.init-button {
+    background-color: #dc3545;  
+    color: white;
+    margin: auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.init-button:hover {
+    background-color: #c82333;
+}
+
+.init-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* loading animation */
+.init-button.loading {
+    position: relative;
+    padding-right: 35px;
+}
+
+.init-button.loading::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    margin-top: -7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Profile Page Styles */
+.profile-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 30px;
+}
+
+.profile-header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    background: #f0f0f0;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.profile-avatar .material-symbols-outlined {
+    font-size: 60px;
+    color: #666;
+}
+
+.form-section {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.form-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.save-button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 12px 30px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+.deactivate-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.deactivate-section h3 {
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.deactivate-section p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.deactivate-button {
+    background-color: #d32f2f;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.deactivate-button:hover {
+    background-color: #b71c1c;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .save-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.password {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute !important;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px !important;
+    color: #666;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #24cfaa;
+}
+
+/* Customer Register Styles */
+.customer-register .field {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 25px;
+    padding: 5px 15px;
+}
+
+.customer-register .field input,
+.customer-register .field select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+}
+
+.customer-register .field select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.customer-register .material-symbols-outlined {
+    color: #666;
+    margin-right: 10px;
+}
+
+.customer-register .toggle-password {
+    cursor: pointer;
+    margin-right: 0;
+}
+
+.customer-register .link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.customer-register .link a {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.customer-register .link a:hover {
+    text-decoration: underline;
+}
+
+/* Center the card on screen */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Customer Register Overlay Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.overlay-content h3 {
+    color: #24cfaa;
+    margin: 0 0 20px 0;
+    font-size: 24px;
+}
+
+.overlay-content p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+#customerId {
+    font-weight: bold;
+    color: #24cfaa;
+}
+
+.overlay-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: #24cfaa;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.overlay-button:hover {
+    background: #1fb393;
+}

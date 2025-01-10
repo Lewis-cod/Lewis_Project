@@ -1,0 +1,78 @@
+/* Welcome Page Styles */
+.welcome-content {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.margin-bottom-35 {
+    margin-bottom: 25px;
+}
+
+/* Role Selection Card Styles */
+.role-select .login-card {
+    background: rgba(162, 185, 180, 0.2);
+    max-width: 900px;
+    padding: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Role Selection Button Styles */
+.role-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.role-list li {
+    flex: 1;
+    max-width: 250px;
+}
+
+.role-button {
+    width: 100%;
+    padding: 20px 25px;
+    background: rgba(255, 255, 255, 0.918);
+    color: #4e4e92;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.role-button:hover {
+    background: #4cd7c7;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76, 215, 199, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .welcome-content { 
+        font-size: 16px; 
+    }
+    .role-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .role-list li { 
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .role-button { 
+        padding: 18px;
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,453 @@
+/* card style */
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* basic layout style */
+.report-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* chart container style */
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.chart-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 400px;
+    position: relative;
+}
+
+/* feedback stats style */
+.feedback-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* rating display style */
+.rating-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.rating-stars {
+    color: #FFD93D;
+    font-size: 1.5rem;
+}
+
+/* feedback count style */
+.feedback-count {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4D96FF;
+}
+
+.feedback-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* provider info style */
+.provider-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.provider-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.provider-stats {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* table style */
+.provider-analysis {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#providerAnalysisTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#providerAnalysisTable th,
+#providerAnalysisTable td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+/* rating distribution style */
+.rating-distribution {
+    min-width: 300px;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.25rem 0;
+}
+
+.rating-bar .rating-label {
+    display: flex;
+    align-items: center;
+    width: 30px;
+}
+
+.rating-bar .rating-label span {
+    color: #333;
+}
+
+.rating-bar .rating-label .star {
+    color: #FFD93D;
+}
+
+.rating-bar .percentage {
+    color: #333;
+    width: 50px;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #4D96FF;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* table style supplement */
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rating-number {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.no-data {
+    color: #666;
+    font-style: italic;
+}
+
+/* status style */
+.status-excellent { color: #2ecc71; }
+.status-good { color: #3498db; }
+.status-average { color: #f1c40f; }
+.status-needs-improvement { color: #e74c3c; }
+.status-no-data { color: #95a5a6; }
+
+/* report header style */
+.report-header {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.report-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+/* filter control style */
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* date range style */
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.date-input {
+    padding: 0.6rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.date-input:hover,
+.date-input:focus {
+    border-color: #4D96FF;
+    outline: none;
+}
+
+.filter-group select {
+    padding: 0.6rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    min-width: 160px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    color: #333;
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+    border-color: #4D96FF;
+    outline: none;
+}
+
+/* button style */
+.btn-primary {
+    background-color: #4D96FF;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: #3d7acc;
+    transform: translateY(-1px);
+}
+
+/* loading state */
+body.loading {
+    position: relative;
+}
+
+body.loading::after {
+    content: 'Loading...';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1000;
+}
+
+/* print style */
+@media print {
+    /* basic print settings */
+    @page {
+        size: landscape;
+        margin: 0;
+        scale: 40%;
+    }
+
+    /* hide elements not needed for print */
+    .header,
+    .sidebar,
+    .filter-controls,
+    .action-buttons {
+        display: none !important;
+    }
+
+    /* main content adjustment */
+    .main-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* report content layout */
+    .report-content {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* chart container adjustment */
+    .chart-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2cm;
+        margin-bottom: 2cm;
+        height: 12cm;
+    }
+
+    .chart-card {
+        height: 12cm !important;
+        width: 100% !important;
+        padding: 0.5cm;
+    }
+
+    /* feedback stats adjustment */
+    .feedback-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1cm;
+        margin: 2cm 0;
+    }
+
+    .stat-card {
+        padding: 0.8cm;
+        text-align: center;
+    }
+
+    /* table size adjustment */
+    .provider-analysis {
+        margin-top: 2cm;
+        width: 100%;
+    }
+
+    #providerAnalysisTable {
+        width: 100%;
+        font-size: 10pt;
+    }
+
+    #providerAnalysisTable th,
+    #providerAnalysisTable td {
+        padding: 0.3cm;
+    }
+
+    /* ensure charts display correctly */
+    canvas {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* text size adjustment */
+    .report-header h2 {
+        font-size: 18pt;
+        margin-bottom: 1cm;
+    }
+
+    .stat-card h4 {
+        font-size: 12pt;
+    }
+
+    .rating-value {
+        font-size: 24pt;
+    }
+
+    .feedback-count {
+        font-size: 24pt;
+    }
+
+    /* ensure colors print correctly */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* responsive adjustment */
+@media (max-width: 1024px) {
+    .report-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .filter-controls {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container,
+    .feedback-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-controls,
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .date-range {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .date-input {
+        width: 100%;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    .rating-distribution {
+        min-width: auto;
+    }
+}

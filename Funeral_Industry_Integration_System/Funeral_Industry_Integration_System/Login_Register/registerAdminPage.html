@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Admin Account</title>
+    
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Login_Register/assets/css/loginMainStyle.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Login_Register/assets/css/registerAdmin.css">
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("3xcFGH6Gr05Hhdtwy");
+        })();
+    </script>
+</head>
+
+<body id="home" class="register-admin">
+    <div class="page-container">
+        
+        <div class="header-section">
+            <h1 class="main-title">Register Admin Account</h1>
+        </div>
+
+        <div class="register-card">
+            <form id="adminRegisterForm" class="register-form">
+                <h2 class="register-title">System Setup</h2>
+
+                <!-- Company Information -->
+                <div class="form-section">
+                    <h3 class="section-title">Company Information</h3>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <span class="material-symbols-outlined">business</span>
+                            <input type="text" name="companyName" placeholder="Company Name" required>
+                        </div>
+                        <div class="input-field">
+                            <span class="material-symbols-outlined">store</span>
+                            <input type="text" name="companyType" value="Third Party Platform" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Information -->
+                <div class="form-section">
+                    <h3 class="section-title">Admin Information</h3>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <span class="material-symbols-outlined">badge</span>
+                            <input type="text" name="identityNo" placeholder="Identity No" required>
+                        </div>
+                        <div class="input-field">
+                            <span class="material-symbols-outlined">phone</span>
+                            <input type="tel" name="contact" placeholder="Contact No" required>
+                        </div>
+                        <div class="input-field">
+                            <span class="material-symbols-outlined">mail</span>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="input-field">
+                            <span class="material-symbols-outlined">lock</span>
+                            <input type="password" name="password" placeholder="Password" required>
+                            <span class="material-symbols-outlined toggle-password" style="cursor: pointer;">visibility_off</span>
+                        </div>
+                        <div class="input-field">
+                            <span class="material-symbols-outlined">lock</span>
+                            <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                            <span class="material-symbols-outlined toggle-password" style="cursor: pointer;">visibility_off</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="register-button">Register Admin Account</button>
+                <div class="link">
+                    <a href="/Funeral_Industry_Integration_System/Login_Register/admin-loginPage.html">Back to Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/Funeral_Industry_Integration_System/Login_Register/assets/javascript/loginHandler.js"></script>
+    <script type="module">
+        import { registerAdmin } from '/Funeral_Industry_Integration_System/config/firebase_user.js';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('adminRegisterForm').addEventListener('submit', registerAdmin);
+        });
+    </script>
+</body>
+</html> 

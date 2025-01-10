@@ -1,0 +1,152 @@
+.notifications-page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.notifications-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.notifications-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+.notifications-header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.btn-mark-read {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    background: #f7fafc;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.btn-mark-read:hover {
+    background: #edf2f7;
+    color: #2d3748;
+}
+
+.notifications-list {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.notification-item {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: #f8fafc;
+}
+
+.notification-item.unread {
+    background: #ebf8ff;
+}
+
+.notification-item.unread:hover {
+    background: #e6f6ff;
+}
+
+.notification-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #f7fafc;
+    color: #4299e1;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-message {
+    margin: 0 0 0.5rem 0;
+    color: #2d3748;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.notification-time {
+    font-size: 0.875rem;
+    color: #718096;
+}
+
+.notifications-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #718096;
+}
+
+.notifications-empty i {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+    color: #a0aec0;
+}
+
+.notifications-empty h3 {
+    margin: 0 0 0.75rem 0;
+    color: #2d3748;
+    font-size: 1.25rem;
+}
+
+.notifications-empty p {
+    margin: 0;
+    font-size: 1rem;
+    color: #718096;
+    line-height: 1.5;
+}
+
+/* Custom scrollbar for notifications list */
+.notifications-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.notifications-list::-webkit-scrollbar-track {
+    background: #f7fafc;
+}
+
+.notifications-list::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+} 

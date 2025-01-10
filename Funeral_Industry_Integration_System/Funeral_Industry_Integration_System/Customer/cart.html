@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Funeral Integration Platform</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/cart.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/cart.js"></script>
+</head>
+<body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading cart...</p>
+        </div>
+    </div>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h1>Your Cart (<span id="itemCount">0</span> items)</h1>
+        </div>
+
+        <div class="cart-content">
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">RM 0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Sales Tax:</span>
+                    <span id="tax">RM 0.00</span>
+                </div>
+                <div class="summary-total">
+                    <span>Grand total:</span>
+                    <span id="grandTotal">RM 0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="window.location.href='/Funeral_Industry_Integration_System/Customer/checkout.html'">
+                    Check out
+                </button>
+            </div>
+        </div>
+
+        <!-- Empty state message -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-shopping-cart"></i>
+            <h2>Your Cart is Empty</h2>
+            <p>Add some funeral packages to your cart to get started.</p>
+            <a href="/Funeral_Industry_Integration_System/Customer/funeral_package.html" class="browse-btn">
+                Browse Packages
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

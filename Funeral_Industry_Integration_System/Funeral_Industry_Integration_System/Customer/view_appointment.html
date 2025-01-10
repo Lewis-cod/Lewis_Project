@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View Appointments</title>
+
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/view_appointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script src="/Funeral_Industry_Integration_System/Customer/assets/javascript/view_appointment.js" type="module"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/notificationService.js"></script>
+    
+</head>
+<body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <!-- Loading spinner -->
+    <div class="loader-container">
+        <span class="loader"></span>
+    </div>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <div class="main-content">
+            <div class="appointments-container">
+                <h1>My Appointments</h1>
+                
+                <!-- Appointments list -->
+                <div class="appointments-list" id="appointmentsList">
+                    <!-- Appointments will be inserted here by JavaScript -->
+                </div>
+
+                <!-- No appointments message -->
+                <div id="noAppointments" style="display: none;">
+                    <p>You have no appointments scheduled.</p>
+                    <a href="/Funeral_Industry_Integration_System/Customer/make_appointment.html" class="btn-make-appointment">Make an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this before closing body tag -->
+    <div id="cancelOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h3>Cancel Appointment</h3>
+            <p>Are you sure you want to cancel this appointment?</p>
+            <div id="cancelAppointmentDetails"></div>
+            <div class="overlay-buttons">
+                <button id="confirmCancelBtn" class="btn-cancel">Yes, Cancel Appointment</button>
+                <button id="cancelCancelBtn" class="btn-keep">No, Keep Appointment</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

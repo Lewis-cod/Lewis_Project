@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Receipt - Funeral Integration Platform</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/order_receipt.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/order_receipt.js"></script>
+</head>
+<body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <div class="receipt-container">
+        <div class="receipt-content">
+            <!-- Company Header -->
+            <div class="company-header">
+                <img id="companyLogo" src="" alt="Logo">
+                <h1>Funeral Integration Platform</h1>
+                <p>Your Trusted Funeral Service Provider</p>
+            </div>
+
+            <!-- Receipt Details -->
+            <div class="receipt-details">
+                <h2>Receipt</h2>
+                <div class="receipt-info">
+                    <div class="info-group">
+                        <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+                        <p><strong>Payment ID:</strong> <span id="paymentId"></span></p>
+                        <p><strong>Date:</strong> <span id="orderDate"></span></p>
+                        <p><strong>Time:</strong> <span id="orderTime"></span></p>
+                    </div>
+                    <div class="info-group">
+                        <p><strong>Payment Method:</strong> <span id="paymentMethod"></span></p>
+                        <p><strong>Order Status:</strong> <span id="orderStatus"></span></p>
+                    </div>
+                    <div class="info-group">
+                        <p><strong>Customer ID:</strong> <span id="customerId"></span></p>
+                        <p><strong>Customer Name:</strong> <span id="customerName"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Details -->
+            <div class="package-details">
+                <h3>Package Details</h3>
+                <div id="packageList">
+                    <!-- Packages will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Totals -->
+            <div class="receipt-totals">
+                <div class="total-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal"></span>
+                </div>
+                <div class="total-line">
+                    <span>Tax (6%):</span>
+                    <span id="tax"></span>
+                </div>
+                <div class="total-line grand-total">
+                    <span>Total Amount:</span>
+                    <span id="totalAmount"></span>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="receipt-footer">
+                <p>Thank you for supporting!</p>
+                <p>For any inquiries, please contact us at support@example.com</p>
+            </div>
+
+            <!-- Print Button -->
+            <div class="print-actions">
+                <button onclick="handlePrint()" class="print-btn">
+                    <i class="fas fa-print"></i> Print Receipt
+                </button>
+                <button onclick="window.history.back()" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Orders
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

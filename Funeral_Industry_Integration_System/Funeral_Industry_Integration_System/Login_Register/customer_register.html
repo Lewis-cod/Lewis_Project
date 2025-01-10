@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funeral Industry Integration System</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Login_Register/assets/css/customer_login.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Login_Register/assets/css/loginMainStyle.css" />
+
+    <!-- Database -->
+    <script type="module" src="/Funeral_Industry_Integration_System/config/firebase_customer.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"></script>
+  </head>
+
+  <body id="home" class="customer-register">
+    <!-- Page Container -->
+    <div class="page-container">
+      <!-- Header -->
+      <div class="header-section">
+        <h1 class="main-title">Funeral Industry Integration System</h1>
+      </div>
+      <!-- End Header -->
+
+      <!-- Register Card -->
+      <div class="login-card">
+        <div class="login-form">
+          <h2 class="login-title">Create Account</h2>
+
+          <!-- Fields -->
+          <form onsubmit="return handleRegister(event)">
+            <div class="fields">
+              <div class="field">
+                <span class="material-symbols-outlined">badge</span>
+                <input 
+                    type="tel" 
+                    name="icNumber" 
+                    placeholder="IC Number (12 digits)" 
+                    maxlength="12" 
+                    pattern="\d{12}"
+                    oninput="validateICNumber(this)"
+                    onkeydown="return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) || /[0-9]/.test(event.key)"
+                    required 
+                />
+              </div>
+
+              <div class="field">
+                <span class="material-symbols-outlined">person</span>
+                <input 
+                    type="text" 
+                    name="fullName" 
+                    placeholder="Full Name (max 30 characters)" 
+                    maxlength="30"
+                    oninput="validateName(this)"
+                    onkeydown="return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) || /[A-Za-z\s]/.test(event.key)"
+                    required 
+                />
+              </div>
+
+              <div class="field">
+                <span class="material-symbols-outlined">person</span>
+                <select name="gender" required>
+                  <option value="" disabled selected>Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <span class="material-symbols-outlined">mail</span>
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email (example@domain.com)" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    required 
+                />
+              </div>
+
+              <div class="field">
+                <span class="material-symbols-outlined">phone</span>
+                <input 
+                    type="tel" 
+                    name="phone" 
+                    placeholder="Phone Number (10-11 digits)" 
+                    minlength="10"
+                    maxlength="11"
+                    pattern="[0-9]{10,11}"
+                    oninput="validatePhone(this)"
+                    onkeydown="return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) || /[0-9]/.test(event.key)"
+                    required 
+                />
+              </div>
+
+              <!-- Update password hint -->
+              <div class="password-hint">
+                <div class="hint-text">
+                    Recommended Password Format: <span>Test@1234</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="material-symbols-outlined">lock</span>
+                <input type="password" name="password" placeholder="Password" required />
+                <span class="material-symbols-outlined toggle-password" onclick="togglePasswordVisibility(this)">visibility_off</span>
+              </div>
+
+              <div class="field">
+                <span class="material-symbols-outlined">lock</span>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" required />
+                <span class="material-symbols-outlined toggle-password" onclick="togglePasswordVisibility(this)">visibility_off</span>
+              </div>
+
+              <button type="button" onclick="registerCustomer()" class="cust-signin-button">Register</button>
+              
+              <!-- Login Link -->
+              <div class="link">
+                <span>Already have an account?</span>
+                <a href="/Funeral_Industry_Integration_System/Login_Register/customer_login.html">Login</a>
+              </div>
+            </div>
+          </form>
+          <!-- End Fields -->
+        </div>
+      </div>
+      <!-- End Register Card -->
+    </div>
+
+    <script>
+      function togglePasswordVisibility(element) {
+        const passwordInput = element.previousElementSibling;
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            element.textContent = 'visibility';
+        } else {
+            passwordInput.type = 'password';
+            element.textContent = 'visibility_off';
+        }
+      }
+    </script>
+
+    <!-- Add this before closing body tag -->
+    <div id="successOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h3>Registration successful!</h3>
+            <p>Your Customer ID is: <span id="customerId"></span></p>
+            <p>Please use this ID to login.</p>
+            <button onclick="redirectToLogin()" class="overlay-button">OK</button>
+        </div>
+    </div>
+
+    <script type="module" src="/Funeral_Industry_Integration_System/Login_Register/assets/javascript/customer_register.js"></script>
+  </body>
+</html> 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Funeral Integration Platform</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/checkout.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/checkout.js"></script>
+</head>
+<body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <div class="checkout-container">
+        <div class="checkout-content">
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="order-items">
+                    <!-- Order items will be loaded here -->
+                </div>
+                <div class="order-totals">
+                    <div class="total-line">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">RM 0.00</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Sales Tax (6%):</span>
+                        <span id="tax">RM 0.00</span>
+                    </div>
+                    <div class="total-line grand-total">
+                        <span>Total:</span>
+                        <span id="total">RM 0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-section">
+                <h2>Payment Details</h2>
+                <form id="payment-form" class="payment-form">
+                    <div class="form-group">
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" id="card-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <div class="card-input-container">
+                            <input type="text" id="card-number" maxlength="19" required>
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="form-group half">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" maxlength="3" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="pay-button">
+                        Pay RM <span id="pay-amount">0.00</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Success Overlay -->
+    <div id="successOverlay" class="success-overlay">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h2>Payment Successful!</h2>
+            <p>Your order has been confirmed.</p>
+            <button onclick="window.location.href='/Funeral_Industry_Integration_System/Customer/order_history.html'">
+                Return to Order History
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

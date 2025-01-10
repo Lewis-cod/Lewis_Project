@@ -1,0 +1,146 @@
+/* Register card styles */
+.register-card {
+    background: white;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.register-form {
+    width: 100%;
+}
+
+.register-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* Form section styles */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #24cfaa;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #24cfaa;
+}
+
+/* Input group styles */
+.input-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-field .material-symbols-outlined {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+/* Password visibility icon */
+.input-field .toggle-password {
+    position: absolute;
+    left: auto;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.input-field .toggle-password:hover {
+    color: #24cfaa;
+}
+
+.input-field input,
+.input-field select {
+    width: 100%;
+    padding: 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+    border-color: #24cfaa;
+    outline: none;
+}
+
+/* only view */
+.input-field input[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+/* Register button styles */
+.register-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 25px;
+    background: #24cfaa;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.register-button:hover {
+    background: #1fb997;
+}
+
+/* Link styles */
+.link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.link a:hover {
+    color: #24cfaa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8em;
+        padding: 15px 0;
+    }
+
+    .register-card {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+} 

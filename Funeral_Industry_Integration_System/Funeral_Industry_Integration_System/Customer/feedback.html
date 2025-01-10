@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Rating - Funeral Integration Platform</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/feedback.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/feedback.js"></script>
+</head>
+<body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <div class="feedback-container">
+        <div class="feedback-content">
+            <h1>Feedback & Rating</h1>
+            <div class="order-info">
+                <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+                <p><strong>Order Date:</strong> <span id="orderDate"></span></p>
+            </div>
+
+            <form id="feedbackForm" class="feedback-form">
+                <!-- Star Rating -->
+                <div class="rating-section">
+                    <h3>Rate your experience</h3>
+                    <div class="star-rating">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                    <p class="rating-text">Click to rate</p>
+                </div>
+
+                <!-- Feedback Categories -->
+                <div class="feedback-categories">
+                    <h3>What did you like about our service?</h3>
+                    <div class="categories">
+                        <label class="category-item">
+                            <input type="checkbox" name="categories" value="Service Quality">
+                            <span>Service Quality</span>
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox" name="categories" value="Package Value">
+                            <span>Package Value</span>
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox" name="categories" value="Staff Service">
+                            <span>Staff Service</span>
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox" name="categories" value="Facilities">
+                            <span>Facilities</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Comments -->
+                <div class="feedback-comments">
+                    <h3>Additional Comments</h3>
+                    <textarea 
+                        name="comments" 
+                        placeholder="Share your experience with us..."
+                        maxlength="500"
+                    ></textarea>
+                    <div class="char-count">0/500</div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Feedback
+                    </button>
+                    <button type="button" class="back-btn" onclick="window.history.back()">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Update the success overlay -->
+    <div id="successOverlay" class="overlay">
+        <div class="overlay-content">
+            <i class="fas fa-check-circle"></i>
+            <h2>Thank You!</h2>
+            <p>Your feedback has been successfully submitted.</p>
+            <button type="button" class="back-btn">Back to Order History</button>
+        </div>
+    </div>
+</body>
+</html> 

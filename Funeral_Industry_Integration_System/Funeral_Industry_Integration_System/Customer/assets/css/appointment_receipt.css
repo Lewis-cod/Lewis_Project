@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #2c3e50;
+    --success-color: #27ae60;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --background-color: #f5f6fa;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+}
+
+.receipt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.receipt-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.receipt-header h1 {
+    color: var(--primary-color);
+    margin: 20px 0;
+    font-size: 28px;
+}
+
+.success-message {
+    color: var(--success-color);
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* Animated checkmark */
+.success-checkmark {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.check-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    background-color: var(--success-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-icon::before {
+    content: "";
+    width: 30px;
+    height: 15px;
+    border-left: 4px solid white;
+    border-bottom: 4px solid white;
+    transform: rotate(-45deg);
+}
+
+.receipt-details {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.detail-item {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item label {
+    font-weight: bold;
+    width: 120px;
+    color: var(--primary-color);
+}
+
+.detail-item span {
+    flex: 1;
+    color: var(--text-color);
+}
+
+.receipt-footer {
+    text-align: center;
+}
+
+.thank-you {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media print {
+    .action-buttons {
+        display: none;
+    }
+    
+    .receipt-card {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .receipt-card {
+        padding: 20px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+    }
+    
+    .detail-item label {
+        margin-bottom: 5px;
+    }
+}
+
+.appointment-id {
+    background-color: #f0f4f8;
+    margin: -25px -25px 15px -25px;
+    padding: 25px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px dashed var(--border-color);
+}
+
+.appointment-id label {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.appointment-id span {
+    font-family: monospace;
+    font-size: 1.1em;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+} 

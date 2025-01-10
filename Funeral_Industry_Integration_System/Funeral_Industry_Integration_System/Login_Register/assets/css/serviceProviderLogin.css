@@ -1,0 +1,114 @@
+/* serive provider login card style */
+.service-provider-login .login-card {
+    background: white;
+    max-width: 450px;
+    padding: 0;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+/* Logo style */
+.login-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.login-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fields style */
+.fields {
+    width: 100%;
+    padding: 75px 5px 5px 5px;
+}
+
+.fields input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    padding: 20px 10px;
+    width: 100%;
+}
+
+.username, .password {
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1,
+                inset -8px -8px 8px #ffffff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.fields .material-symbols-outlined {
+    color: #666;
+    font-size: 20px;
+}
+
+/* Button Styles */
+.service-provider-signin-button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    background: #24cfaa;
+    box-shadow: 3px 3px 8px #b1b1b1,
+                -3px -3px 8px #ffffff;
+    transition: 0.5s;
+}
+
+.service-provider-signin-button:hover {
+    background: #2fdbb6;
+}
+
+.service-provider-signin-button:active {
+    background: #1da88a;
+}
+
+/* Register Link Styles */
+.link {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.link span {
+    color: #666;
+    font-size: 15px;
+}
+
+.link a {
+    text-decoration: none;
+    color: #24cfaa;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.link a:hover {
+    color: #1da88a;
+}

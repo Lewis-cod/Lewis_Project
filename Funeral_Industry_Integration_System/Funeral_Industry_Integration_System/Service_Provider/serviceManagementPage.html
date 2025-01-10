@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Management</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Service_Provider/assets/css/serviceProviderDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Service_Provider/assets/css/serviceManagement.css">
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+            </div>
+            
+            <div class="header-right">
+                
+                <div class="header-icon profile-dropdown">
+                    <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                    <div class="dropdown-content" id="profileDropdownContent">
+                        <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderProfile.html">
+                            <span class="material-symbols-outlined">person</span>
+                            View Profile
+                        </a>
+                        <a href="#" id="logoutBtn">
+                            <span class="material-symbols-outlined">logout</span>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="brand-text">Service Provider</span>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="sidebar-main-item">
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderDashboardPage.html">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="sidebar-list-text">Dashboard</span>
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+         
+            <!-- Other menu items -->
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderDashboardPage.html">
+                        <span class="material-symbols-outlined">assignment</span>
+                        <span class="sidebar-list-text">Plan Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item" id="serviceManagementItem">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceManagementPage.html" id="serviceManagementLink">
+                        <span class="material-symbols-outlined">build</span>
+                        <span class="sidebar-list-text">Service Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/customerAppointments.html">
+                        <span class="material-symbols-outlined">event_available</span>
+                        <span class="sidebar-list-text">Customer Appointments</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/feedback_management.html">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="sidebar-list-text">Feedback & Ratings</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/partnerShipStatus.html">
+                        <span class="material-symbols-outlined">handshake</span>
+                        <span class="sidebar-list-text">Partnership</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Company Images Section -->
+                <section class="company-images-section">
+                    <h2>Company Gallery</h2>
+                    <div class="image-upload-container">
+                        <div class="image-grid" id="companyImageGrid">
+                            <!-- Images will be displayed here -->
+                        </div>
+                        <div class="upload-controls">
+                            <label for="companyImageUpload" class="upload-btn">
+                                <span class="material-symbols-outlined">add_photo_alternate</span>
+                                Add Company Image
+                            </label>
+                            <input type="file" id="companyImageUpload" accept="image/*" multiple style="display: none">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Service Packages Section -->
+                <section class="service-packages-section">
+                    <h2>Service Packages</h2>
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderAddEditPackage.html" class="add-package-btn">
+                        <span class="material-symbols-outlined">add</span>
+                        Add New Package
+                    </a>
+
+                    <div class="packages-grid" id="packagesGrid">
+                        <!-- Package cards will be dynamically added here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/serviceProviderDashboard.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/serviceManagement.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/partnershipButton.js"></script>
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="package-overlay" style="display: none;">
+        <div class="overlay-content loading-wrapper">
+            <div class="package-loading-content">
+                <div class="loading-icon">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <h4>Uploading Package</h4>
+                <p>Please wait while we process your request...</p>
+                <div class="loading-progress">
+                    <div class="loading-progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html> 

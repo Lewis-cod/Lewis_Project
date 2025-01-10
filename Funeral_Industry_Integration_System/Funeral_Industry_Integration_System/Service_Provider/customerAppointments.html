@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Appointments</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Service_Provider/assets/css/serviceProviderDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Service_Provider/assets/css/customerAppointments.css">
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+            </div>
+            
+            <div class="header-right">
+                
+                <div class="header-icon profile-dropdown">
+                    <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                    <div class="dropdown-content" id="profileDropdownContent">
+                        <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderProfile.html">
+                            <span class="material-symbols-outlined">person</span>
+                            View Profile
+                        </a>
+                        <a href="#" id="logoutBtn">
+                            <span class="material-symbols-outlined">logout</span>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="brand-text">Service Provider</span>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="sidebar-main-item">
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderDashboardPage.html">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="sidebar-list-text">Dashboard</span>
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+         
+            <!-- Other menu items -->
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderDashboardPage.html">
+                        <span class="material-symbols-outlined">assignment</span>
+                        <span class="sidebar-list-text">Plan Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item" id="serviceManagementItem">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceManagementPage.html" id="serviceManagementLink">
+                        <span class="material-symbols-outlined">build</span>
+                        <span class="sidebar-list-text">Service Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/customerAppointments.html">
+                        <span class="material-symbols-outlined">event_available</span>
+                        <span class="sidebar-list-text">Customer Appointments</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/feedback_management.html">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="sidebar-list-text">Feedback & Ratings</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/partnerShipStatus.html">
+                        <span class="material-symbols-outlined">handshake</span>
+                        <span class="sidebar-list-text">Partnership</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1>Appointments Management</h1>
+                </div>
+
+                <div class="appointments-container">
+                    <!-- Tabs -->
+                    <div class="appointment-tabs">
+                        <button class="tab-button active" data-status="Pending">
+                            <span class="material-symbols-outlined">schedule</span>
+                            Pending
+                        </button>
+                        <button class="tab-button" data-status="Approved">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            Approved
+                        </button>
+                        <button class="tab-button" data-status="Cancelled">
+                            <span class="material-symbols-outlined">cancel</span>
+                            Cancelled
+                        </button>
+                        <button class="tab-button" data-status="Rejected">
+                            <span class="material-symbols-outlined">block</span>
+                            Rejected
+                        </button>
+                        <button class="tab-button" data-status="Completed">
+                            <span class="material-symbols-outlined">task_alt</span>
+                            Completed
+                        </button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="appointments-grid" id="appointmentsGrid">
+                        <!-- Appointments will be dynamically added here -->
+                    </div>
+
+                    <!-- No Appointments Message -->
+                    <div id="noAppointmentsMessage" class="no-appointments" style="display: none;">
+                        <span class="material-symbols-outlined">calendar_today</span>
+                        <p>No appointments found for this status.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirm Action</h2>
+                <span class="material-symbols-outlined modal-close" id="closeModal">close</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-icon">
+                    <span class="material-symbols-outlined">help</span>
+                </div>
+                <p id="confirmationMessage"></p>
+            </div>
+            <div class="modal-buttons">
+                <button id="confirmButton" class="btn-confirm">
+                    <span class="material-symbols-outlined">check</span>
+                    Confirm
+                </button>
+                <button id="cancelButton" class="btn-cancel">
+                    <span class="material-symbols-outlined">close</span>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Overlay -->
+    <div id="successOverlay" class="overlay">
+        <div class="overlay-content">
+            <div class="success-icon">
+                <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <h3>Success!</h3>
+            <p id="successMessage"></p>
+            <button class="btn-ok" onclick="closeSuccessOverlay()">
+                <span class="material-symbols-outlined">done</span>
+                OK
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/serviceProviderDashboard.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/customerAppointments.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/partnershipButton.js"></script>
+</body>
+</html> 

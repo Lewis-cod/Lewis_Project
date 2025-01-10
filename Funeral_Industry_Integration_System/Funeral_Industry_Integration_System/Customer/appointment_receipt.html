@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Confirmation</title>
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/appointment_receipt.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script src="/Funeral_Industry_Integration_System/Customer/assets/javascript/appointment_receipt.js" defer></script>
+  </head>
+  <body>
+    <header-component></header-component>
+
+    <div class="receipt-container">
+      <div class="receipt-card">
+        <div class="receipt-header">
+          <div class="success-checkmark">
+            <div class="check-icon">
+              <span class="icon-line line-tip"></span>
+              <span class="icon-line line-long"></span>
+            </div>
+          </div>
+          <h1>Appointment Receipt</h1>
+          <p class="success-message">
+            Your appointment has been successfully scheduled!
+          </p>
+        </div>
+
+        <div class="receipt-details">
+          <div class="detail-item appointment-id">
+            <label>Appointment ID:</label>
+            <span id="receiptId"></span>
+          </div>
+          <div class="detail-item">
+            <label>Name:</label>
+            <span id="receiptName"></span>
+          </div>
+          <div class="detail-item">
+            <label>Email:</label>
+            <span id="receiptEmail"></span>
+          </div>
+          <div class="detail-item">
+            <label>Service Provider:</label>
+            <span id="receiptProvider"></span>
+          </div>
+          <div class="detail-item">
+            <label>Date:</label>
+            <span id="receiptDate"></span>
+          </div>
+          <div class="detail-item">
+            <label>Time Slot:</label>
+            <span id="receiptTime"></span>
+          </div>
+        </div>
+
+        <div class="receipt-footer">
+          <p class="thank-you">Thank you for choosing our services!</p>
+          <div class="action-buttons">
+            <a href="/Funeral_Industry_Integration_System/Customer/view_appointment.html" class="btn btn-primary"
+              >View Appointments</a
+            >
+            <button onclick="printReceipt()" class="btn btn-secondary">
+              Print Receipt
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

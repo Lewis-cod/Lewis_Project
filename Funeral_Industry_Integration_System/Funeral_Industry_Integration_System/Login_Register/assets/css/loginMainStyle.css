@@ -1,0 +1,226 @@
+/* Base style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Page layout */
+body#home {
+    min-height: 100vh;
+    background: url('/Funeral_Industry_Integration_System/Login_Register/assets/img/login_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    padding: 80px 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+body#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(78, 80, 87, 0.85);
+    z-index: 0;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.login-card .login-logo {
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+    border: 3px solid rgb(5, 3, 88);
+}
+
+/* Title layout */
+.main-title {
+    color: white;
+    font-size: 48px;
+    font-weight: 300;
+    padding: 15px 0;
+    margin-bottom: 40px;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-title::before,
+.main-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-50%);
+}
+
+.main-title::before { top: 0; }
+.main-title::after { bottom: 0; }
+
+/* Card layout */
+.login-card {
+    border-radius: 30px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Responsive layout */
+@media (max-width: 992px) {
+    .main-title { 
+        font-size: 36px; 
+    }
+    body#home { 
+        padding: 60px 20px; 
+    }
+    .login-card { 
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body#home { 
+        padding: 40px 15px; 
+    }
+    .main-title { 
+        font-size: 28px; 
+    }
+    .main-title::before,
+    .main-title::after { 
+        width: 150px; 
+    }
+    .login-card {
+        padding: 20px;
+        margin: 0 10px;
+    }
+}
+
+/* Common Form Styles */
+.form-group input,
+.form-group select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: transparent;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-bottom-color: #fff;
+}
+
+/* Common Button Styles */
+.submit-button,
+.back-button {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.submit-button {
+    background: #fff;
+    color: #4B69B1;
+    border: none;
+}
+
+.submit-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.back-button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.back-button:hover {
+    border-color: #fff;
+}
+
+/* Message Styles */
+.form-message {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+/* Common Text Colors */
+.text-white {
+    color: #fff;
+}
+
+.text-transparent {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.password {
+    position: relative;
+}
+
+.password .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-field {
+    position: relative;
+    width: 100%;
+}
+
+.input-field input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.toggle-password:hover {
+    color: rgba(255, 255, 255, 1);
+} 
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funeral List</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <!-- For header styles -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/funeral_list.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script src="/Funeral_Industry_Integration_System/Customer/assets/javascript/index.js" defer></script>
+    <script src="/Funeral_Industry_Integration_System/Customer/assets/javascript/funeral_list.js" defer></script>
+    <!-- For search functionality -->
+  </head>
+
+  <body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading service providers...</p>
+        </div>
+    </div>
+
+    <!-- Update the filter section -->
+    <div class="filter-section">
+        <div class="filter-container">
+            <div class="filter-group">
+                <select id="state" class="filter-select">
+                    <option value="">All States</option>
+                    <option value="Johor">Johor</option>
+                    <option value="Kedah">Kedah</option>
+                    <option value="Kelantan">Kelantan</option>
+                    <option value="Melaka">Melaka</option>
+                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                    <option value="Pahang">Pahang</option>
+                    <option value="Perak">Perak</option>
+                    <option value="Perlis">Perlis</option>
+                    <option value="Pulau Pinang">Pulau Pinang</option>
+                    <option value="Sabah">Sabah</option>
+                    <option value="Sarawak">Sarawak</option>
+                    <option value="Selangor">Selangor</option>
+                    <option value="Terengganu">Terengganu</option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                </select>
+            </div>
+
+            <button class="filter-apply-btn">Apply Filter</button>
+            <button class="filter-reset-btn">Reset</button>
+        </div>
+    </div>
+
+    <!-- Existing Content -->
+    <div class="property-listing">
+      <div class="listing-grid">
+        <!-- Dynamic content will be loaded here by funeral_list.js -->
+      </div>
+    </div>
+    <!-- Jitliang 08122024 11:55 PM removed hardcode -->
+    <script>
+      function viewDetails(id) {
+        window.location.href = `/Funeral_Industry_Integration_System/Customer/details.html?id=${id}`;
+      }
+    </script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/funeral_list.js"></script>
+  </body>
+</html>

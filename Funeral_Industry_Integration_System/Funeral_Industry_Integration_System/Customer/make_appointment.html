@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make Appointment</title>
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/make_appointment.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <script src="/Funeral_Industry_Integration_System/Customer/assets/javascript/index.js"></script>
+    <script src="/Funeral_Industry_Integration_System/Customer/assets/javascript/make_appointment.js" type="module"></script>
+    <script src="/Funeral_Industry_Integration_System/Customer/assets/javascript/appointment_receipt.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Loading spinner -->
+    <div class="loader-container">
+      <span class="loader"></span>
+    </div>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+      <header-component></header-component>
+
+      <div class="main-content">
+        <div class="appointment-container">
+          <div class="appointment-time-container">
+            <h2 class="appointment-time-heading">Appointment Hours</h2>
+            <h3 class="appointment-day-heading">Monday-Friday</h3>
+            <p>9am - 11am (Slot 1)</p>
+            <p>12pm - 2pm (Slot 2)</p>
+            <p>3pm - 5pm (Slot 3)</p>
+
+            <h3 class="appointment-day-heading">Saturday-Sunday</h3>
+            <p>9am - 11am (Slot 1)</p>
+            <p>12pm - 2pm (Slot 2)</p>
+
+            <hr />
+
+            <h4 class="heading-contactus-whatsapp">
+              For More Enquiry Contact Us On WhatsApp
+            </h4>
+          </div>
+
+          <div class="appointment-form-container">
+            <form class="appointment-form" id="appointmentForm">
+              <h2 class="heading-yellow">Appointment Online</h2>
+
+              <div class="form-field">
+                <p>Name :</p>
+                <input type="text" id="fullName" readonly />
+              </div>
+
+              <div class="form-field">
+                <p>Email :</p>
+                <input type="text" id="email" readonly />
+              </div>
+
+              <div class="form-field">
+                <p>Service Provider :</p>
+                <select id="serviceProvider" name="select-service-provider" required>
+                  <option value="">Select Service Provider</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <p>Date :</p>
+                <input
+                  type="date"
+                  id="appointmentDate"
+                  min=""
+                  max=""
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <p>Time :</p>
+                <select name="select-appointment-time" id="#">
+                  <option value="1">9am - 11am (Slot 1)</option>
+                  <option value="2">12pm - 2pm (Slot 2)</option>
+                  <option value="3">3pm - 5pm (Slot 3)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="appointment-submit-btn">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add this script at the bottom of body -->
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          document.body.classList.add("ready");
+        }, 1000); // 1 second delay to show loading animation
+      });
+    </script>
+
+    <!-- Add this right before the closing body tag -->
+    <div id="confirmationOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h3>Confirm Appointment</h3>
+            <p>Please confirm your appointment details:</p>
+            <div id="appointmentDetails"></div>
+            <div class="overlay-buttons">
+                <button id="confirmBtn" class="confirm-btn">Confirm</button>
+                <button id="cancelBtn" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .overlay-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 90%;
+    }
+
+    .overlay-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .confirm-btn, .cancel-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .confirm-btn {
+        background: #4CAF50;
+        color: white;
+    }
+
+    .cancel-btn {
+        background: #f44336;
+        color: white;
+    }
+    </style>
+
+    <!-- Add this before closing body tag -->
+    <div id="pendingOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h3>Cannot Make New Appointment</h3>
+            <p>You already have a pending appointment.</p>
+            <div id="pendingAppointmentDetails"></div>
+            <div class="overlay-buttons">
+                <a href="/Funeral_Industry_Integration_System/Customer/view_appointment.html" class="btn-view">View My Appointments</a>
+                <button class="btn-keep" onclick="document.getElementById('pendingOverlay').style.display='none'">Close</button>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

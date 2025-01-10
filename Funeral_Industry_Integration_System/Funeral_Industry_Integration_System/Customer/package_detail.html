@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Details - Funeral Integration Platform</title>
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/package_detail.css" />
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/package_detail.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+</head>
+<body>
+    <header-component></header-component>
+
+    <div class="package-container">
+        <!-- Back Button -->
+        <div class="back-section">
+            <button onclick="history.back()" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+        </div>
+
+        <!-- Package Title -->
+        <div class="package-title">
+            <h1 id="package-name">Package Name</h1>
+            <p id="package-type">Package Type</p>
+        </div>
+
+        <!-- Package Image -->
+        <div class="package-image-section">
+            <div class="image-container">
+                <img id="package-img" src="" alt="Package Image" onclick="openModal()">
+                <button class="nav-btn prev" onclick="prevImage()">❮</button>
+                <button class="nav-btn next" onclick="nextImage()">❯</button>
+                <span class="image-count">1/1</span>
+            </div>
+        </div>
+
+        <!-- Package Price -->
+        <div class="price-section">
+            <h2 id="package-cost">RM 0.00</h2>
+        </div>
+
+        <!-- Package Information -->
+        <div class="info-section">
+            <div class="info-box">
+                <h3>Package Details</h3>
+                <div id="package-description" class="description-text">
+                    <!-- Details will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>Service Provider Information</h3>
+                <div id="provider-info" class="provider-details">
+                    <div class="provider-item">
+                        <span class="label">Provider Name:</span>
+                        <span id="provider-name"></span>
+                    </div>
+                    <div class="provider-item">
+                        <span class="label">Contact Number:</span>
+                        <span id="provider-contact"></span>
+                    </div>
+                    <div class="provider-item">
+                        <span class="label">Email:</span>
+                        <span id="provider-email"></span>
+                    </div>
+                    <div class="provider-item">
+                        <span class="label">Address:</span>
+                        <span id="provider-address"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-section">
+            <div class="button-container">
+                <button class="action-btn save-to-favorites">Add to Cart</button>
+                <button class="action-btn purchase">Purchase</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Enlarged Package Image">
+            <button class="modal-nav prev" onclick="prevImage()">&lt;</button>
+            <button class="modal-nav next" onclick="nextImage()">&gt;</button>
+            <span class="modal-count">1/1</span>
+        </div>
+    </div>
+
+    <!-- Cart Confirmation Overlay -->
+    <div id="cartOverlay" class="overlay">
+        <div class="overlay-content">
+            <h3>Add to Cart</h3>
+            <p>Are you sure you want to add this package to your cart?</p>
+            <div class="overlay-buttons">
+                <button class="cancel-btn" onclick="closeCartOverlay()">Cancel</button>
+                <button class="confirm-btn" onclick="confirmAddToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this after the cart overlay -->
+    <div id="successOverlay" class="overlay">
+        <div class="overlay-content success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Success!</h3>
+            <p>Package has been added to your cart</p>
+            <div class="overlay-buttons">
+                <button class="continue-btn" onclick="closeSuccessOverlay()">Continue Shopping</button>
+                <button class="view-cart-btn" onclick="window.location.href='/Funeral_Industry_Integration_System/Customer/cart.html'">View Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

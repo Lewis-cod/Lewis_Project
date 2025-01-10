@@ -1,0 +1,1096 @@
+/* Company Images Section */
+.company-images-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.image-item {
+    position: relative;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(244, 67, 54, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.image-item:hover .delete-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delete-btn:hover {
+    background: #f44336;
+    transform: scale(1.1);
+}
+
+.upload-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.upload-btn:hover {
+    background: #43A047;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.upload-btn:active {
+    transform: translateY(0);
+}
+
+.upload-btn .material-symbols-outlined {
+    font-size: 24px;
+}
+
+/* Image count indicator */
+.image-count-indicator {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.image-count-indicator.near-limit {
+    color: #ff9800;
+}
+
+.image-count-indicator.at-limit {
+    color: #f44336;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .delete-btn {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Service Packages Section */
+.service-packages-section {
+    margin-top: 40px;
+}
+
+.service-packages-section h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.add-package-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 20px 30px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.add-package-btn:hover {
+    background: linear-gradient(45deg, #1976D2, #1565C0);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+.add-package-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.add-package-btn .material-symbols-outlined {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.add-package-btn:hover .material-symbols-outlined {
+    transform: rotate(90deg);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.package-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+}
+
+.package-images {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.package-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.package-details {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-id {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.package-name {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.package-religion {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #e9ecef;
+    border-radius: 20px;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.package-price {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2196F3;
+    margin-bottom: 15px;
+}
+
+.package-description {
+    color: #666;
+    margin-bottom: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-height: 4.5em;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+
+.package-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+
+.carousel {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 200px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: #ffd700;
+    color: #333;
+    border-radius: 25px;
+    font-weight: 500;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-btn:hover {
+    background: #ffed4a;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.edit-btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 4px rgba(255, 215, 0, 0.2);
+}
+
+.edit-btn .material-symbols-outlined {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.edit-btn:hover .material-symbols-outlined {
+    transform: rotate(15deg);
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.save-btn,
+.cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.cancel-btn {
+    background: #f44336;
+    color: white;
+}
+
+/* Image Preview Styles */
+.image-preview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.preview-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.preview-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close-preview {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.close-preview .material-symbols-outlined {
+    font-size: 32px;
+}
+
+/* Make company images clickable */
+.company-image {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.company-image:hover {
+    opacity: 0.8;
+}
+
+/* Add these styles for the select dropdown */
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.form-group select option {
+    padding: 8px;
+}
+
+/* Responsive adjustments for packages grid */
+@media (max-width: 1200px) {
+    .packages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================ Package Form Components ================ */
+.package-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.package-form-group {
+    margin-bottom: 1rem;
+}
+
+.package-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.package-form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.package-form-group select::-ms-expand {
+    display: none;
+}
+
+.package-form-group select:hover {
+    border-color: #2196F3;
+}
+
+.package-form-group select:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+    outline: none;
+}
+
+/* Package Image Upload Components */
+.package-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.package-image-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.package-image-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.package-delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.package-delete-btn:hover {
+    background: rgba(255,0,0,0.1);
+}
+
+.package-delete-btn span {
+    color: #dc3545;
+    font-size: 20px;
+}
+
+.package-upload-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Package Overlay Components */
+.package-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.overlay-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    animation: slideIn 0.3s ease;
+}
+
+.overlay-icon {
+    width: 70px;
+    height: 70px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.overlay-icon .material-symbols-outlined {
+    font-size: 35px;
+    color: #2196F3;
+}
+
+.overlay-content h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.overlay-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.overlay-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.overlay-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.overlay-buttons button:hover {
+    transform: translateY(-2px);
+}
+
+.overlay-buttons .btn-light {
+    background: #f8f9fa;
+    color: #666;
+    border: 1px solid #dee2e6;
+}
+
+.overlay-buttons .btn-light:hover {
+    background: #e9ecef;
+    border-color: #dde2e6;
+}
+
+.overlay-buttons .btn-primary {
+    background: #2196F3;
+    border: none;
+}
+
+.overlay-buttons .btn-primary:hover {
+    background: #1976D2;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.overlay-buttons .material-symbols-outlined {
+    font-size: 20px;
+}
+
+#cancelUpload {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+}
+
+#cancelUpload:hover {
+    background-color: #d5d5d5;
+    transform: translateY(-2px);
+}
+
+#confirmUpload {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+#confirmUpload:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Package Loading Components */
+.package-loading-content {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.package-loading-content h4 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.package-loading-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Enhanced Spinner */
+.spinner-border {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-width: 0.25rem;
+    animation: spin 1s linear infinite, glow 2s ease-in-out infinite;
+}
+
+/* Loading Progress Bar */
+.loading-progress {
+    width: 200px;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.loading-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #4CAF50;
+    border-radius: 4px;
+    animation: progress 2s ease infinite;
+}
+
+/* Animations */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.5); }
+    50% { box-shadow: 0 0 40px rgba(255,255,255,0.8); }
+}
+
+@keyframes progress {
+    0% { width: 0%; opacity: 1; }
+    50% { width: 100%; opacity: 0.5; }
+    100% { width: 100%; opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Package Action Buttons */
+.package-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.package-action-buttons .btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Package Image Preview */
+.package-image-preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.package-image-preview-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+
+.package-image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.package-remove-image-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding: 0;
+    line-height: 1;
+}
+
+.package-remove-image-btn:hover {
+    background: rgba(255, 0, 0, 0.9);
+}
+
+/* Find and copy the relevant styles */
+.add-package-btn,
+.add-company-image-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2196F3;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.add-package-btn:hover,
+.add-company-image-btn:hover {
+    background-color: #1976D2;
+    color: white;
+}
+
+.add-package-btn .material-symbols-outlined,
+.add-company-image-btn .material-symbols-outlined {
+    font-size: 24px;
+}
+
+/* Image count styles */
+.package-image-count-indicator {
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Add these styles for the package image grid */
+.package-form-group .company-images-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.package-form-group .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+    min-height: 100px; /* Add minimum height to show grid area */
+}
+
+.package-form-group .image-item {
+    position: relative;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.package-form-group .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.package-form-group .image-item:hover {
+    transform: translateY(-5px);
+}
+
+.package-form-group .image-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Update both image and package grids */
+.image-grid,
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
+    gap: 30px;
+    padding: 20px;
+    max-width: 1400px; /* Increased max-width for better spacing */
+    margin: 0 auto;
+}
+
+/* Ensure cards don't overflow */
+.package-card {
+    min-width: 0;
+    width: 100%;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+    .image-grid,
+    .packages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .image-grid,
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .image-grid,
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Enhanced Loading Overlay */
+.loading-wrapper {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    max-width: 500px;
+    width: 90%;
+    animation: fadeScale 0.3s ease;
+}
+
+.loading-icon {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.loading-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: rgba(33, 150, 243, 0.1);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.loading-icon .spinner-border {
+    width: 4rem;
+    height: 4rem;
+    border-width: 0.3rem;
+    color: #2196F3;
+    animation: spin 1s linear infinite;
+}
+
+.package-loading-content {
+    color: #333;
+    text-align: center;
+}
+
+.package-loading-content h4 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.package-loading-content p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.loading-progress {
+    width: 300px;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 10px;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #2196F3, #64B5F6);
+    border-radius: 10px;
+    animation: progress 2s ease infinite;
+    background-size: 200% 100%;
+}
+
+.loading-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #666;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.loading-status .material-symbols-outlined {
+    font-size: 20px;
+    animation: rotate 2s linear infinite;
+    color: #2196F3;
+}
+
+/* New Animations */
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+}
+
+@keyframes fadeScale {
+    from { 
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes progress {
+    0% { width: 0%; background-position: 100% 0; }
+    50% { width: 100%; background-position: 0 0; }
+    100% { width: 100%; background-position: -100% 0; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

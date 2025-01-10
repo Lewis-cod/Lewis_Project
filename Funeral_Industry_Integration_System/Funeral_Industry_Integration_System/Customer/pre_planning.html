@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Planning - Funeral Integration Platform</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pre_planning.css">
+
+    <!-- Header Component -->
+    <script src="components/header.js" type="module"></script>
+
+    <!-- Add this script at the top of the file, after the other imports -->
+    <script type="module">
+        import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js";
+
+        // Function to load hero background image
+        async function loadHeroImage() {
+            try {
+                const storage = getStorage();
+                const imageRef = ref(storage, 'customer_index_img-vid/pre-plan-funeral.jpg');
+                const imageUrl = await getDownloadURL(imageRef);
+                
+                // Update the hero section background
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('${imageUrl}')`;
+                }
+            } catch (error) {
+                console.error("Error loading hero image:", error);
+            }
+        }
+
+        // Load the image when the document is ready
+        document.addEventListener('DOMContentLoaded', loadHeroImage);
+    </script>
+</head>
+<body>
+    <!-- Header Component -->
+    <header-component></header-component>
+
+    <main class="pre-planning-container">
+        <section class="hero-section">
+            <h1>Why Pre-Plan Your Funeral?</h1>
+            <p class="subtitle">Make informed decisions today for peace of mind tomorrow</p>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Benefits of Pre-Planning</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Peace of Mind</h3>
+                    <p>Ensure your final wishes are known and reduce the emotional burden on your loved ones during a difficult time.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Financial Security</h3>
+                    <p>Lock in today's prices and protect against future inflation. Plan within your budget and avoid emotional overspending.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Family Harmony</h3>
+                    <p>Prevent family conflicts by making your wishes clear and removing the guesswork for your loved ones.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Time to Consider</h3>
+                    <p>Make thoughtful decisions without time pressure, allowing you to explore all options and make informed choices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="steps-section">
+            <h2>How Pre-Planning Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Initial Consultation</h3>
+                        <p>Meet with our professional planners to discuss your wishes and explore available options.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Choose Your Plan</h3>
+                        <p>Select the services and arrangements that best reflect your wishes and budget.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Document Your Wishes</h3>
+                        <p>We'll record all your preferences and keep them safely on file.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Flexible Payment Options</h3>
+                        <p>Choose from various payment plans that suit your financial situation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detailed-info-section">
+            <h2>Funeral Arrangements in Malaysia: The Importance of Pre-Planning</h2>
+            
+            <div class="intro-text">
+                <p>Discussing death and the afterlife is often considered taboo. Many assume that when the time comes, someone will handle the necessary funeral arrangements.</p>
+                <p>However, most of us have thought about how we wish to depart from this world—what our wake should look like, how we'd like our remains to be handled, and how we hope to be remembered.</p>
+                <p>Death, however, often comes unexpectedly. Without prior planning, family members and loved ones are left scrambling to organize a proper send-off under significant time pressure and emotional stress.</p>
+            </div>
+
+            <div class="key-points">
+                <h3>Here are three reasons why funeral pre-planning is vital and how you can approach it effectively:</h3>
+                
+                <div class="point-card">
+                    <h4>Ensuring the Right Rites</h4>
+                    <p>Religious and cultural beliefs greatly influence the style and structure of a funeral. For example, Buddhism, Taoism, and Christianity each have specific traditions and rituals for wakes and funerals. These may include the setup of the funeral hall and the prescribed prayer rites.</p>
+                    <p>By pre-planning your funeral, you can decide in advance how you wish the proceedings to unfold—choosing the religious rites, the decorations for the hall, and other personal touches.</p>
+                    <p>If these decisions are left to your loved ones, misunderstandings may occur. For instance, if your faith has not been clearly declared, or if you are a freethinker, your family might inadvertently follow rites that do not align with your beliefs. Pre-planning helps ensure your wishes are respected and avoids unnecessary confusion.</p>
+                </div>
+
+                <div class="point-card">
+                    <h4>Managing Budget and Expenses</h4>
+                    <p>While funerals can be perceived as expensive or ostentatious, they play a crucial role beyond tradition. A well-planned funeral allows loved ones to grieve, find closure, and honor the departed through shared memories and respects.</p>
+                    <p>By pre-planning, you can take control of the financial aspects of your funeral, ensuring it aligns with your wishes while relieving your family of sudden financial strain.</p>
+                    <p>Setting a budget and organizing details ahead of time allows you to address potential costs and secure resources in advance. This prevents your family from shouldering a large, unexpected financial burden during an emotionally difficult time.</p>
+                </div>
+
+                <div class="point-card">
+                    <h4>Preserving Your Legacy</h4>
+                    <p>How would you like to be remembered? Do you prefer burial or cremation? Would you like a traditional cemetery plot or a resting place in a landscaped memorial park?</p>
+                    <p>Pre-planning gives you the freedom to make these decisions yourself. You can choose your final resting place, consider Feng Shui elements, arrange to be laid to rest near family members, or customize the décor of your wake and memorial. You could even commission a special commemorative tablet to honor your life.</p>
+                    <p>These arrangements provide your loved ones with peace of mind, enabling them to focus on mourning, healing, and finding closure rather than managing complex logistics.</p>
+                </div>
+            </div>
+
+            <div class="planning-guide">
+                <h3>How to Pre-Plan Funeral Arrangements</h3>
+                <p>There are several ways to approach funeral pre-planning. You could:</p>
+                <ul>
+                    <li>Conduct your own research and document your preferences.</li>
+                    <li>Discuss your wishes with a trusted confidant who can help manage these arrangements.</li>
+                    <li>Consult a professional funeral service provider to formalize your plans.</li>
+                </ul>
+                
+                <div class="platform-info">
+                    <p>The Funeral Integration Platform offers comprehensive solutions for those seeking guided pre-planning and seamless execution of funeral arrangements. Their all-inclusive services ensure your wishes are honored, relieving your family of logistical concerns.</p>
+                    <p>The Funeral Integration Platform provides five customizable pre-arranged plans tailored to different budgets and religious beliefs, including options for Taoist, Buddhist, and Christian traditions. These plans cover every detail, from transportation of the deceased to obtaining permits, organizing the wake, and managing documentation, all handled by their experienced team.</p>
+                    <p>Dedicated service personnel and authorized agents are available across Malaysia to assist with every stage of the process, making pre-planning convenient and worry-free.</p>
+                </div>
+            </div>
+
+            <div class="conclusion">
+                <h3>A Thoughtful Gift for Your Loved Ones</h3>
+                <p>Pre-planning your funeral arrangements is not only a practical step but also a considerate one. It spares your loved ones the emotional and financial strain of organizing a funeral during a challenging time. By making these preparations, you can ensure your final wishes are respected, leaving your family the space to grieve and heal in peace.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Start Pre-Planning?</h2>
+            <p>Take the first step towards peace of mind for you and your loved ones.</p>
+            <div class="cta-buttons">
+                <a href="make_appointment.html" class="cta-button primary">Schedule a Consultation</a>
+                <a href="funeral_package.html" class="cta-button secondary">View Our Packages</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 

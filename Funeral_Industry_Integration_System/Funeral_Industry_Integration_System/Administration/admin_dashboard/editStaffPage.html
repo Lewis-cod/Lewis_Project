@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title-->
+    <title>Edit Staff</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/adminDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/staffManagement.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/addNewStaff.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+            </div>
+            
+            <div class="header-right">
+                
+                
+                <!-- Profile Dropdown -->
+                <div class="header-icon profile-dropdown">
+                    <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                    <div class="dropdown-content" id="profileDropdownContent">
+                        <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminProfilePage.html">
+                            <span class="material-symbols-outlined">person</span>
+                            View Profile
+                        </a>
+                        <a href="#" id="logoutBtn">
+                            <span class="material-symbols-outlined">logout</span>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+                <!-- End Profile Dropdown -->
+
+            </div>
+        </header>
+
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="brand-text">Admin Inventory</span>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="sidebar-main-item">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="sidebar-list-text">Dashboard</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+
+            <!-- Other menu items -->
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item active">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminStaffManagementPage.html">
+                        <span class="material-symbols-outlined">badge</span>
+                        <span class="sidebar-list-text">Staff Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminServiceProviderManagementPage.html">
+                        <span class="material-symbols-outlined">partner_exchange</span>
+                        <span class="sidebar-list-text">Service Provider Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminReportsPage.html">
+                        <span class="material-symbols-outlined">report</span>
+                        <span class="sidebar-list-text">Reports</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminCustomerManagementPage.html">
+                        <span class="material-symbols-outlined">patient_list</span>
+                        <span class="sidebar-list-text">Customer Management</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+
+                <!-- Title Section -->
+                <div class="main-title">
+                    <h1 class="font-title">Edit Staff Information</h1>
+                    <button class="back-btn" onclick="window.location.href='/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminStaffManagementPage.html'">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                        Back to Staff Management Control Panel
+                    </button>
+                </div>
+                <!-- End Title Section -->
+
+                <!-- Edit Staff Form -->
+                <div class="form-container">
+                    <form class="add-staff-form" id="editStaffForm">
+                        <!-- Personal Information Section -->
+                        <div class="form-section">
+                            <h2 class="section-title">Personal Information</h2>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="staffName">Full Name</label>
+                                    <input type="text" id="staffName" name="staffName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="identityNo">Identity No.</label>
+                                    <input type="text" id="identityNo" name="identityNo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" name="gender" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact">Contact Number</label>
+                                    <input type="tel" id="contact" name="contact" required>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Personal Information Section -->
+
+                        <!-- Employment Information Section -->
+                        <div class="form-section">
+                            <h2 class="section-title">Employment Information</h2>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="position">Position</label>
+                                    <select id="position" name="position" required>
+                                        <option value="">Select Position</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="staff">Staff</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select id="status" name="status" required>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Employment Information Section -->
+                        <!-- Account Credentials Section -->
+                        <div class="form-section">
+                            <h2 class="section-title">Account Credentials</h2>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="password">New Password (Leave blank if no change)</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="password" name="password" placeholder="Enter new password">
+                                        <span class="material-symbols-outlined toggle-password">visibility</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm New Password</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password">
+                                        <span class="material-symbols-outlined toggle-password">visibility</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Account Credentials Section -->
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn" onclick="window.location.href='/Funeral_Industry_Integration_System/Administration/admin_dashboard/adminStaffManagementPage.html'">Cancel</button>
+                            <button type="submit" class="submit-btn">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Edit Staff Form -->
+            </div>
+        </main>
+        <!-- End Main Content -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="/Funeral_Industry_Integration_System/Administration/assets/javascript/adminDashboardscripts.js"></script>
+    <script type="module">
+        import { loadStaffData, updateStaff } from '/Funeral_Industry_Integration_System/config/firebase_user.js';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStaffData();
+            document.getElementById('editStaffForm').addEventListener('submit', updateStaff);
+        });
+    </script>
+</body>
+
+</html> 

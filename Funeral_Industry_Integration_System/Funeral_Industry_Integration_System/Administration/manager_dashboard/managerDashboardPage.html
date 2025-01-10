@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title-->
+    <title>Manager Dashboard</title>
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/adminDashboard.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Administration/assets/css/staffManagement.css">
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+            </div>
+            
+            <div class="header-right">
+                
+                <!-- Profile Dropdown -->
+                <div class="header-icon profile-dropdown">
+                    <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                    <div class="dropdown-content" id="profileDropdownContent">
+                        <a href="/Funeral_Industry_Integration_System/Administration/manager_dashboard/managerProfile.html">
+                            <span class="material-symbols-outlined">person</span>
+                            View Profile
+                        </a>
+                        <a href="#" id="logoutBtn">
+                            <span class="material-symbols-outlined">logout</span>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+                <!-- End Profile Dropdown -->
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">home_app_logo</span>
+                <span class="brand-text">Manager Inventory</span>
+            </div>
+
+           <!-- Dashboard -->
+           <div class="sidebar-main-item">
+            <span class="material-symbols-outlined">dashboard</span>
+                <span class="sidebar-list-text">Dashboard</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+
+            <!-- Other menu items -->
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item active">
+                    <a href="/Funeral_Industry_Integration_System/Administration/manager_dashboard/managerStaffManagementPage.html">
+                        <span class="material-symbols-outlined">badge</span>
+                        <span class="sidebar-list-text">Staff Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/manager_dashboard/managerServiceProviderManagementPage.html">
+                        <span class="material-symbols-outlined">partner_exchange</span>
+                        <span class="sidebar-list-text">Service Provider Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/manager_dashboard/managerReportsPage.html">
+                        <span class="material-symbols-outlined">report</span>
+                        <span class="sidebar-list-text">Reports</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Funeral_Industry_Integration_System/Administration/manager_dashboard/managerCustomerManagement.html">
+                        <span class="material-symbols-outlined">patient_list</span>
+                        <span class="sidebar-list-text">Customer Management</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+
+                <!-- Title Section -->
+                <div class="main-title">
+                    <h1 class="font-title">Staff Management Control Panel </h1>
+                    <button class="add-staff-btn" onclick="window.location.href='/Funeral_Industry_Integration_System/Administration/admin_dashboard/addNewStaffPage.html'">
+                        <span class="material-symbols-outlined">add</span>
+                        Add New Staff
+                    </button>
+                </div>
+                <!-- End Title Section -->
+
+                <!-- Staff Stats Cards -->
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">Total Staff</p>
+                            <span class="material-symbols-outlined text-blue">group</span>
+                        </div>
+                        <span class="text-primary font-weight-bold"></span>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary ">Active Staff</p>
+                            <span class="material-symbols-outlined text-green">check_circle</span>
+                        </div>
+                        <span class="text-primary font-weight-bold"></span>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">Inactive Staff</p>
+                            <span class="material-symbols-outlined text-red">cancel</span>
+                        </div>
+                        <span class="text-primary font-weight-bold"></span>
+                    </div>
+                </div>
+                <!-- End Staff Stats Cards -->
+
+                <!-- Staff Table Section -->
+                <div class="staff-table-container">
+
+                    <!-- Staff Table -->
+                    <table class="staff-table">
+                        <thead>
+                            <tr>
+                                <th>Staff ID</th>
+                                <th>Name</th>
+                                <th>Identity No.</th>
+                                <th>Gender</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Contact</th>
+                                <th>Position</th>
+                                <th>Password</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <!-- Staff Table Body -->
+                        <tbody id="staffTableBody">
+
+                            <!-- Staff Data -->
+                            <template id="staffRowTemplate">
+                                <tr>
+                                    <td data-field="user_ID"></td>
+                                    <td data-field="user_Name"></td>
+                                    <td data-field="user_IdentityNo"></td>
+                                    <td data-field="user_Gender"></td>
+                                    <td data-field="user_Email"></td>
+                                    <td>
+                                        <span class="status" data-field="user_Status"></span>
+                                    </td>
+                                    <td data-field="user_Contact"></td>
+                                    <td data-field="user_Position"></td>
+                                    <td>
+                                        <span class="password-field">
+                                            ••••••••
+                                            <span class="material-symbols-outlined view-password-icon">visibility</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="action-icons"> 
+                                            Edit
+                                            <span class="material-symbols-outlined action-icon">edit</span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                    <!-- End Staff Table -->
+                </div>
+                <!-- End Staff Table Section -->
+
+            </div>
+        </main>
+        <!-- End Main Content -->
+    </div>
+    <!-- End Page Container -->
+
+    <!-- Scripts -->
+    <script src="/Funeral_Industry_Integration_System/Administration/assets/javascript/adminDashboardscripts.js"></script>
+    <!-- Database -->
+    <script type="module">
+        import { showStaffList, showHidePassword, editStaffInfo } from '/Funeral_Industry_Integration_System/config/firebase_user.js';
+        // work when database is loaded
+        window.showHidePassword = showHidePassword;
+        window.editStaffInfo = editStaffInfo;
+    </script>
+</body>
+
+</html>

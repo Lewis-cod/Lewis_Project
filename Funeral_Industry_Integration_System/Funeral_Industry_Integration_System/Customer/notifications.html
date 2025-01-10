@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css">
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/notifications.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Components -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+</head>
+<body>
+    <header-component></header-component>
+
+    <main class="notifications-page">
+        <div class="notifications-container">
+            <div class="notifications-header">
+                <h1>Notifications</h1>
+                <button id="markAllRead" class="btn-mark-read">
+                    <i class="fas fa-check-double"></i>
+                    Mark all as read
+                </button>
+            </div>
+
+            <div class="notifications-list" id="notificationsList">
+                <!-- Notifications will be dynamically added here -->
+            </div>
+
+            <!-- Empty state -->
+            <div id="emptyState" class="notifications-empty" style="display: none;">
+                <i class="fas fa-bell-slash"></i>
+                <h3>No notifications</h3>
+                <p>You're all caught up! Check back later for new notifications.</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/notifications.js"></script>
+</body>
+</html> 

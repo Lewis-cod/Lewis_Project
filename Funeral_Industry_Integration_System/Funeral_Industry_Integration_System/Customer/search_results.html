@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/index.css" />
+    <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Customer/assets/css/funeral_list.css" />
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/components/header.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header-component></header-component>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Searching...</p>
+        </div>
+    </div>
+
+    <div class="property-listing">
+        <h2 id="searchHeader">Search Results</h2>
+        <div class="listing-grid">
+            <!-- Results will be loaded here -->
+        </div>
+    </div>
+
+    <script type="module" src="/Funeral_Industry_Integration_System/Customer/assets/javascript/search_results.js"></script>
+  </body>
+</html> 

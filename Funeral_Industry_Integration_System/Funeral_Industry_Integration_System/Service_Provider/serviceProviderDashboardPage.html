@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Title-->
+        <title>Service Provider Dashboard</title>
+
+        <!-- Open Sans Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/Funeral_Industry_Integration_System/Service_Provider/assets/css/serviceProviderDashboard.css">
+</head>
+
+<body>
+    <div class="grid-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+        </div>
+        
+        <div class="header-right">
+           
+            <div class="header-icon profile-dropdown">
+                <span class="material-symbols-outlined" id="profileDropdown">account_circle</span>
+                <div class="dropdown-content" id="profileDropdownContent">
+                    <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderProfile.html">
+                        <span class="material-symbols-outlined">person</span>
+                        View Profile
+                    </a>
+                    <a href="#" id="logoutBtn">
+                        <span class="material-symbols-outlined">logout</span>
+                        Log Out
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <span class="material-symbols-outlined">home_app_logo</span>
+            <span class="brand-text">Service Provider</span>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="sidebar-main-item">
+            <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderDashboardPage.html">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="sidebar-list-text">Dashboard</span>
+            </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="sidebar-divider"></div>
+     
+        <!-- Other menu items -->
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceProviderDashboardPage.html">
+                    <span class="material-symbols-outlined">assignment</span>
+                    <span class="sidebar-list-text">Plan Management</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item" id="serviceManagementItem">
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/serviceManagementPage.html" id="serviceManagementLink">
+                    <span class="material-symbols-outlined">build</span>
+                    <span class="sidebar-list-text">Service Management</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/customerAppointments.html">
+                    <span class="material-symbols-outlined">event_available</span>
+                    <span class="sidebar-list-text">Customer Appointments</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/feedback_management.html">
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="sidebar-list-text">Feedback & Ratings</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="/Funeral_Industry_Integration_System/Service_Provider/partnerShipStatus.html">
+                    <span class="material-symbols-outlined">handshake</span>
+                    <span class="sidebar-list-text">Partnership</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- End Sidebar -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+        <!-- Welcome Section -->
+        <div class="main-title">
+            <div class="welcome-content">
+                <h1>Welcome to Funeral Industry Integration System</h1>
+                <p class="welcome-subtitle">Join our platform to expand your business reach and provide better services</p>
+                <div class="welcome-description">
+                    <p>We provide comprehensive solutions for funeral service providers:</p>
+                    <ul>
+                        <li> >  Streamlined business management</li>
+                        <li> >  Enhanced customer reach</li>
+                        <li> >  Professional service integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Welcome Section -->
+
+        <!-- Plan Section -->
+        <div class="plan-section">
+            <h2>Partnership Plan</h2>
+            <div class="plan-card">
+                <div class="status-indicator" id="planStatus">
+                    <!-- status will be updated by JS -->
+                </div>
+                <h3>Standard Partnership Plan</h3>
+                <div class="price">RM 1999/Year</div>
+                <ul class="benefits">
+                    <li>Premium listing on platform</li>
+                    <li>Customer inquiry management system</li>
+                    <li>Appointment scheduling system</li>
+                    <li>Service management system</li>
+                    <li>Priority customer matching</li>
+                    <li>24/7 Technical support</li>
+                    <li>Marketing promotion opportunities</li>
+                </ul>
+                <button class="join-btn" id="partnershipButton" onclick="checkAndRedirect()">Join Now</button>
+            </div>
+        </div>
+        <!-- End Plan Section -->
+
+        </div>
+    </main>
+        <!-- End Main Content -->  
+    </div>
+    <!-- End Page Container -->
+
+    <!-- Scripts -->
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/serviceProviderDashboard.js"></script>
+    <script type="module" src="/Funeral_Industry_Integration_System/Service_Provider/assets/javascript/partnershipButton.js"></script>
+</body>
+</html>
